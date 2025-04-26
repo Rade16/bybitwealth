@@ -1,0 +1,201 @@
+.welcome__content-animation {
+  position: relative;
+  &-graph {
+    width: 530px;
+    height: 312px;
+    background: url("./../assets/graph/graph.svg") no-repeat center center/cover;
+  }
+  &-profit {
+    padding: 11px;
+    width: 163px;
+    height: 110px;
+    background: linear-gradient(155deg, rgba(255, 188, 29, 1) 0%, rgba(255, 210, 59, 1) 100%);
+    border-radius: 16px;
+    position: relative;
+    bottom: 60px;
+    left: 410px;
+    &-title {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 1);
+      font-size: 13px;
+      font-weight: 400;
+    }
+    &-text {
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 1);
+      font-size: 24px;
+      font-weight: 700;
+    }
+    &-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(240, 195, 70, 1) 0%, rgba(255, 230, 149, 1) 100%);
+      box-shadow: 0px 4.54px 9.07px 0px rgba(232, 156, 0, 1);
+    }
+  }
+  &-buy {
+    opacity: 0;
+    position: absolute;
+    bottom: 135px;
+    left: 215px;
+    animation: buy 5s ease infinite;
+  }
+  &-sell {
+    position: absolute;
+    right: 185px;
+    top: 55px;
+    animation: sell 5s ease infinite;
+  }
+  &-firstTrader {
+    position: absolute;
+    padding: 2px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    bottom: 0px;
+    left: 40px;
+    animation: trader1 5s ease infinite;
+
+    &-img {
+      border-radius: 100px;
+    }
+    &-name {
+      color: rgba(0, 18, 133, 1);
+      font-size: 16px;
+      font-weight: 400;
+      padding-right: 14px;
+    }
+    &-cursor {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+    }
+  }
+  &-secondTrader {
+    position: absolute;
+    padding: 2px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    animation: trader2 5s ease infinite;
+
+    &-img {
+      border-radius: 100px;
+    }
+    &-name {
+      color: rgba(0, 18, 133, 1);
+      font-size: 16px;
+      font-weight: 400;
+      padding-right: 14px;
+    }
+    &-cursor {
+      position: absolute;
+      top: -20px;
+      left: -10px;
+    }
+  }
+}
+
+@keyframes trader1 {
+  0% {
+    bottom: 180px;
+    left: -30px;
+  }
+
+  10% {
+    bottom: 180px;
+    left: -30px;
+  }
+  20% {
+    bottom: 70px;
+    left: 25px;
+  }
+  90% {
+    bottom: 70px;
+    left: 25px;
+  }
+  100% {
+    bottom: 180px;
+    left: -30px;
+  }
+}
+
+@keyframes buy {
+  0% {
+    opacity: 0;
+  }
+  19% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes trader2 {
+  0% {
+    right: -95px;
+    bottom: 195px;
+  }
+
+  30% {
+    right: -95px;
+    bottom: 195px;
+  }
+  40% {
+    right: -5px;
+    bottom: 280px;
+  }
+  90% {
+    right: -5px;
+    bottom: 280px;
+  }
+  100% {
+    right: -95px;
+    bottom: 195px;
+  }
+}
+
+@keyframes sell {
+  0% {
+    opacity: 0;
+  }
+
+  39% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYBITWEALTH</title>
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./js/slider.js" defer></script>
+    <script src="./js/accordion.js" defer></script>
+    <script src="./js/calculator.js" defer></script>
+    <script src="./js/formValidate.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/graphAnimation.js" defer></script>
+    <script src="./js/burger.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div class="modal" id="modal">
+      <div class="modal__content">
+        <img src="./assets/close.svg" alt="close" class="modal__content-close"
+          onclick="closeModal()">
+        <p class="modal__content-title">Fill out form and get a free
+          consultation
+          on our investment
+          instruments.</p>
+        <form action class="modal__content-form" id="form" novalidate>
+          <label for="name" class="modal__content-form-label">Name</label>
+          <input type="text" placeholder="Name" id="name" required
+            data-validate="required"
+            class="modal__content-form-input">
+          <div class="error-message" data-error-for="name"></div>
+
+          <label for="surname" class="modal__content-form-label">Surname</label>
+          <input type="text" placeholder="Surname" id="surname" required
+            data-validate="required"
+            class="modal__content-form-input">
+          <div class="error-message" data-error-for="surname"></div>
+
+          <label for="email" class="modal__content-form-label">Email</label>
+          <input type="email" placeholder="example@gmail.com" id="email"
+            required data-validate="email"
+            class="modal__content-form-input">
+          <div class="error-message" data-error-for="email"></div>
+
+          <label for="phone" class="modal__content-form-label">Phone</label>
+          <input type="tel" placeholder="+7 (999) 999-99-99" required
+            data-validate="required"
+            id="phone"
+            class="modal__content-form-input">
+          <div class="error-message" data-error-for="phone"></div>
+          <button type="submit" class="modal__content-form-button"
+            id="modalBtn">Submit the
+            form and start earning</button>
+          <p class="modal__content-form-privacy">By clicking «Submit the form
+            and start earning», you agree to
+            <a href="#" class="modal__content-form-privacy-link">Privacy
+              Policy</a></p>
+        </form>
+      </div>
+    </div>
+    <header class="header">
+      <div class="header__container">
+        <nav class="header__navigation">
+          <div class="header__navigation-wrapper">
+            <a href="./index.html">
+              <p class="header__logo">BYBIT<span
+                  class="header__logo-span">WEALTH</span></p></a>
+            <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+            <label class="burger" for="burger-checkbox"></label>
+          </div>
+          <ul class="header__list">
+            <li class="header__list-item"><a href="#profit"
+                class="header__list-item-link">Profit
+                Examples</a></li>
+            <li class="header__list-item"><a href="#ourTraders"
+                class="header__list-item-link">Our
+                Traders</a></li>
+            <li class="header__list-item"><a
+                href="#calculator"
+                class="header__list-item-link">Calculator</a></li>
+            <li class="header__list-item"><a
+                href="#testimonials"
+                class="header__list-item-link">Testimonials</a></li>
+            <li class="header__list-item"><a href="#faq"
+                class="header__list-item-link">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="welcome">
+      <div class="container">
+        <div class="welcome__content">
+          <div class="welcome__content-block">
+            <div class="welcome__content-block-bybit">
+              <p>Backed by</p>
+              <img src="./assets/bybit.svg" alt>
+            </div>
+            <h1 class="welcome__content-block-title"><span
+                class="gradient-letters">Passive
+                Income</span> with Bybit’s Top Traders — <br>Let your <img
+                src="./assets/coins.svg"
+                alt class="welcome__content-block-title-coins"> money work for
+              You!</h1>
+            <p class="welcome__content-block-text">Our team of professional
+              programmers and seasoned traders has developed cutting-edge
+              software that <span
+                class="welcome__content-block-text-orange">scans and analyzes
+                every trader on the Bybit
+                platform.</span> <span
+                class="welcome__content-block-text-hidden">With us, you can
+                invest efficiently in proven
+                professionals and earn passively.</span></p>
+          </div>
+          <div class="welcome__content-animation">
+            <div
+              class="welcome__content-animation-graph">
+            </div>
+            <div class="welcome__content-animation-profit">
+              <div class="welcome__content-animation-profit-circle">
+                <img src="./assets/graph/arrow.svg" alt="arrow"
+                  class="welcome__content-animation-profit-circle-arrow">
+              </div>
+              <p class="welcome__content-animation-profit-title">Profit</p>
+              <p class="welcome__content-animation-profit-text"
+                id="graphProfit">$1,000</p>
+            </div>
+            <img src="./assets/graph/buy.svg" alt
+              class="welcome__content-animation-buy">
+            <img src="./assets/graph/sell.svg" alt
+              class="welcome__content-animation-sell">
+            <div class="welcome__content-animation-firstTrader">
+              <img src="./assets/graph/cursorRight.svg" alt
+                class="welcome__content-animation-firstTrader-cursor">
+              <img src="./assets/graph/firstTrader.jpg" alt="firstTrader"
+                class="welcome__content-animation-firstTrader-img">
+              <p
+                class="welcome__content-animation-firstTrader-name">Professional
+                trader</p>
+            </div>
+
+            <div class="welcome__content-animation-secondTrader">
+              <img src="./assets/graph/cursorLeft.svg" alt
+                class="welcome__content-animation-secondTrader-cursor">
+              <img src="./assets/graph/secondTrader.jpg" alt="secondTrader"
+                class="welcome__content-animation-secondTrader-img">
+              <p
+                class="welcome__content-animation-secondTrader-name">Professional
+                trader</p>
+            </div>
+          </div>
+          <p class="welcome__content-block-text-visible">With us, you can invest
+            <br>
+            efficiently in proven professionals and earn passively.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="why">
+
+        <h2 class="why__title">Why Choose BybitWealth</h2>
+        <div class="why__cards">
+          <div class="why__cards-algorithms">
+            <div class="why__cards-algorithm">
+              <div class>
+                <p class="why__cards-algorithm-title">Unique Selection
+                  Algorithm</p>
+                <p class="why__cards-algorithm-text">We analyze thousands of
+                  Bybit
+                  traders, selecting the top 1% based on:</p>
+                <ul class="why__cards-algorithm-list">
+                  <li class="why__cards-algorithm-list-item">
+                    <p class="why__cards-algorithm-list-item-title">Stable
+                      Profit
+                      (monthly ROI)</p>
+                    <p class="why__cards-algorithm-list-item-text">10% min
+                    </p>
+                  </li>
+                  <li class="why__cards-algorithm-list-item">
+                    <p class="why__cards-algorithm-list-item-title">Low
+                      Drawdowns</p>
+                    <p class="why__cards-algorithm-list-item-text">5-8%
+                      max</p>
+                  </li><li class="why__cards-algorithm-list-item">
+                    <p
+                      class="why__cards-algorithm-list-item-title">Experience</p>
+                    <p class="why__cards-algorithm-list-item-text">2+
+                      years</p>
+                  </li>
+                </ul>
+              </div>
+              <img src="./assets/cards/algorithm.png" alt="algorithm"
+                class="why__cards-algorithm-img">
+            </div>
+            <div class="why__cards-line">
+              <div class="why__cards-line-risk">
+                <p class="why__cards-line-risk-title">Risk Diversification</p>
+                <p class="why__cards-line-risk-text">Your funds are spread
+                  across
+                  10–15 elite traders — no reliance on a single strategy.</p>
+                <img src="./assets/cards/risk.png" alt="risk"
+                  class="why__cards-line-risk-img">
+              </div>
+              <div class="why__cards-line-effort">
+                <p class="why__cards-line-effort-title">Zero Effort
+                  Required</p>
+                <p class="why__cards-line-effort-text">No charts, no analysis,
+                  no
+                  stress.
+                  Invest — we handle the rest.</p>
+                <img src="./assets/cards/effort.png" alt="effort"
+                  class="why__cards-line-effort-img">
+              </div>
+            </div>
+          </div>
+          <div class="why__cards-start">
+            <p class="why__cards-start-title">Begin small and scale your
+              earnings
+              —<br>
+              Start from</p>
+            <img src="./assets/cards/start.svg" alt="start"
+              class="why__cards-start-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="profit" id="profit">
+        <h2 class="profit__title">Profit<br>Examples</h2>
+        <p class="profit__subtitle">6 Months</p>
+        <div class="profit__cards">
+          <div class="profit__cards-card">
+            <p class="profit__cards-card-title">Conservative Portfolio</p>
+            <img src="./assets/profit/conservative.svg" alt="conservative"
+              class="profit__cards-card-img">
+            <p class="profit__cards-card-procent">+12-18 % </p>
+            <p class="profit__cards-card-text">monthly (low risk)</p>
+          </div>
+          <div class="profit__cards-card">
+            <p class="profit__cards-card-title">Balanced Portfolio</p>
+            <img src="./assets/profit/balanced.svg" alt="balanced"
+              class="profit__cards-card-img">
+            <p class="profit__cards-card-procent">+20-25 % </p>
+            <p class="profit__cards-card-text">monthly</p>
+          </div>
+          <div class="profit__cards-card">
+            <p class="profit__cards-card-title">Premium Traders</p>
+            <img src="./assets/profit/premium.svg" alt="premium"
+              class="profit__cards-card-img">
+            <p class="profit__cards-card-procent">Up to +100 %</p>
+            <p class="profit__cards-card-text">monthly (high risk)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="security">
+        <h2 class="security__title">Security<br>
+          Guarantees</h2>
+        <img src="./assets/security/vector.svg" alt="vector"
+          class="security__vector">
+        <div class="security__cards">
+          <div class="security__cards-card">
+            <div class="security__cards-card-content">
+              <img src="./assets/security/wallet.svg" alt="portfolio">
+              <p class="security__cards-card-text">Funds stored in
+                multi-signature
+                wallets</p>
+            </div>
+          </div>
+          <div class="security__cards-card">
+            <div class="security__cards-card-content">
+              <img src="./assets/security/report.svg" alt="portfolio">
+              <p class="security__cards-card-text">Weekly transparency
+                reports:
+                Track where your money is invested</p>
+            </div>
+          </div>
+          <div class="security__cards-card">
+            <div class="security__cards-card-content">
+              <img src="./assets/security/portfolio.svg" alt="portfolio">
+              <p class="security__cards-card-text">5% insurance fund for
+                emergencies</p>
+            </div>
+          </div>
+          <div class="security__cards-card">
+            <div class="security__cards-card-content">
+              <img src="./assets/security/withdraw.svg" alt="portfolio">
+              <p class="security__cards-card-text">Instant withdrawals to your
+                wallet at any time</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="trader" id="ourTraders">
+        <h2 class="trader__title">Meet Our Traders</h2>
+        <p class="trader__subtitle">Our top 3 traders delivered 500%+ annual
+          returns to clients in 2023</p>
+        <div class="trader__cards">
+          <div class="trader__cards-card">
+            <p class="trader__cards-card-title">Conservative trader</p>
+            <p class="trader__cards-card-text">40.31% ROI in 90 days</p>
+            <img src="./assets/trader/conservative.png"
+              alt="conservative trader"
+              class="trader__cards-card-img">
+          </div>
+          <div class="trader__cards-card">
+            <p class="trader__cards-card-title">Conservative trader</p>
+            <p class="trader__cards-card-text">51.50% ROI in 90 days</p>
+            <img src="./assets/trader/conservative51.png"
+              alt="conservative trader"
+              class="trader__cards-card-img">
+          </div>
+          <div class="trader__cards-card">
+            <p class="trader__cards-card-title">Aggressive trader</p>
+            <p class="trader__cards-card-text">334.77% ROI in 90 days</p>
+            <img src="./assets/trader/aggressive.png" alt="aggressive trader"
+              class="trader__cards-card-img">
+          </div>
+        </div>
+      </div>
+
+      <div class="startNow">
+        <div class="startNow__content">
+          <h2 class="startNow__title"><span class="gradient-letters">Start
+              Now</span> — Your
+            Profitable Month Begins
+            Tomorrow!</h2>
+          <p class="startNow__text">Click «Start» — watch your capital
+            grow</p>
+          <button class="startNow__button" onclick="showModal()">Start Earning
+            <img
+              src="./assets/startNow/arrow.svg" alt="arrow"></button>
+        </div>
+        <div class="startNow__images">
+          <img src="./assets/startNow/currency.svg" alt="currency"
+            class="startNow__images-currency">
+          <img src="./assets/startNow/handWithPhone.png" alt="handWithPhone"
+            class="startNow__images-handWithPhone">
+        </div>
+      </div>
+
+      <div class="calculator" id="calculator">
+        <div class="calculator__content">
+          <h1 class="calculator__content-title">Calculator for Compound
+            Interest
+            on Investments</h1>
+          <p class="calculator__content-text">Input your initial capital,
+            investment period, and rate</p>
+        </div>
+        <div class="calculator__calc">
+          <div class="calculator__calc-calculation">
+            <div class="calculator__calc-capital">
+              <p class="calculator__calc-capital-title">Initial capital</p>
+              <div class="calculator__calc-capital-value"
+                id="initialCapital">0</div>
+              <input type="range" min="0" max="9" value="0"
+                class="calculator__calc-range" id="initialCapitalRange">
+            </div>
+            <div class="calculator__calc-period">
+              <p class="calculator__calc-period-title">Investment period:
+                <span
+                  id="investmentPeriod"><b>8 years</b></span></p>
+              <input type="range" min="0" max="9" value="0"
+                class="calculator__calc-range" id="investmentPeriodRange">
+            </div>
+            <div class="calculator__calc-rate">
+              <div class="calculator__calc-rate-stroke">
+                <p class="calculator__calc-rate-title">Interest rate: <span
+                    id="interestRate"><b>10%</b></span>
+                </p>
+                <svg width="20"
+                  height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="calculator__calc-rate-info">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM11 6C11 6.55228 10.5523 7 10 7C9.4477 7 9 6.55228 9 6C9 5.44772 9.4477 5 10 5C10.5523 5 11 5.44772 11 6ZM10 8C9.4477 8 9 8.4477 9 9V14C9 14.5523 9.4477 15 10 15C10.5523 15 11 14.5523 11 14V9C11 8.4477 10.5523 8 10 8Z"
+                    fill="#F5F7FA" />
+                  <path
+                    d="M10 8C9.4477 8 9 8.4477 9 9V14C9 14.5523 9.4477 15 10 15C10.5523 15 11 14.5523 11 14V9C11 8.4477 10.5523 8 10 8Z"
+                    fill="#5D5D5D" />
+                  <path
+                    d="M11 6C11 6.55228 10.5523 7 10 7C9.4477 7 9 6.55228 9 6C9 5.44772 9.4477 5 10 5C10.5523 5 11 5.44772 11 6Z"
+                    fill="#5D5D5D" />
+                </svg>
+                <div class="calculator__calc-rate-info-text">
+                  Calculated as trader’s monthly ROI × 12 months
+                </div>
+              </div>
+              <input type="range" min="2" max="22" step="1" value="2"
+                class="calculator__calc-range" id="interestRateRange">
+            </div>
+            <div class>
+              <label for="reinvest"
+                class="calculator__calc-checkbox-label">Reinvest Earnings
+                <input type="checkbox" id="reinvest"
+                  class="calculator__calc-checkbox">
+                <span class="calculator__calc-checkbox-custom"></span>
+              </label>
+            </div>
+          </div>
+          <div class="calculator__calc-result">
+            <div class="calculator__calc-result-value">
+              <p class="calculator__calc-result-value-title">Your profit</p>
+              <p class="calculator__calc-result-value-profit" id="yourProfit">
+                + 1 345 $ </p>
+
+              <div class="calculator__calc-result-value-stroke"></div>
+              <p class="calculator__calc-result-value-title">Total</p>
+              <p class="calculator__calc-result-value-total" id="total"> + 1
+                655
+                $</p>
+            </div>
+            <div class="calculator__calc-result-annual">
+              <p class="calculator__calc-result-annual-ourTraders">Our
+                traders’
+                annual returns:</p>
+              <div class="calculator__calc-result-annual-line">
+                <div class="calculator__calc-result-annual-line-block">
+                  <p
+                    class="calculator__calc-result-annual-title">Conservative</p>
+                  <p class="calculator__calc-result-annual-text">100%+</p>
+                </div>
+                <div class="calculator__calc-result-annual-line-block">
+                  <p class="calculator__calc-result-annual-title">Higher
+                    Risk</p>
+                  <p class="calculator__calc-result-annual-text">Up to
+                    1,100%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="stillHesitating">
+        <img src="./assets/wallet.svg" alt="wallet"
+          class="stillHesitating__wallet">
+        <img src="./assets/Frame 118.svg" alt="stillHesitating"
+          class="stillHesitating__img">
+        <div class="stillHesitating__content">
+          <p class="stillHesitating__content-title"><span
+              class="gradient-letters">Still hesitating?</span></p>
+          <p class="stillHesitating__content-text">Bitcoin surged 600%
+            in the
+            last 2 years.<br> Start earning 20%+ monthly
+            today!</p>
+          <button class="stillHesitating__content-button"
+            onclick="showModal()">Start Earning
+            <img
+              src="./assets/startNow/arrow.svg" alt="arrow"></button>
+        </div>
+      </div>
+
+      <div class="slider" id="testimonials">
+        <div class="slider__header">
+          <h2 class="slider__header-title">Client Testimonials</h2>
+          <div class="slider__header-control">
+            <div class="slider__header-control-left"
+              id="slider-left"><img
+                src="./assets/slider/left.svg" alt></div>
+            <div class="slider__header-control-right"
+              id="slider-right"><img
+                src="./assets/slider/right.svg" alt></div>
+          </div>
+        </div>
+        <div class="slider__content">
+          <div class="slider__content-line" id="slider">
+
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@bartekwitam.jpg"
+                  alt="@bartekwitam"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@bartekwitam</p>
+              </div>
+              <p class="slider__content-card-text">I used to lose money
+                trading
+                manually. Tried BybitWealth — best decision! My deposit
+                grew
+                67%
+                in 6 months. No hidden fees, totally transparent.</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+67
+                    %</p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">8
+                    months</p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@scaligero_.jpg"
+                  alt="@scaligero_"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@scaligero_</p>
+              </div>
+              <p class="slider__content-card-text">I’m a skeptic, but
+                their
+                trader
+                stats convinced me. Invested 5k→10.6k in a year. Support
+                replies
+                in 10 mins. Perfect for risk-averse investors.</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+112
+                    %
+                  </p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">1
+                    year
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@miinko_k.jpg" alt="@miinko_k"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@miinko_k</p>
+              </div>
+              <p class="slider__content-card-text">I feared a scam but
+                verified
+                via ChainSecurity (open audit). Transparent. +23% in 3
+                months
+                beats my bank.</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+23
+                    %
+                  </p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">3
+                    months
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@michal.ba.jpg"
+                  alt="@michal.ba"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@michal.ba</p>
+              </div>
+              <p class="slider__content-card-text">After losing 2k in
+                crypto,
+                I
+                nearly quit. My friend recommended BybitWealth. Invested
+                1k →
+                $2.45k. Now I sleep soundly.</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+45
+                    %
+                  </p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">5
+                    months
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@norbert_bb.jpg"
+                  alt="@norbert_bb"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@norbert_bb</p>
+              </div>
+              <p class="slider__content-card-text">I’m in IT — no time
+                for
+                trading. BybitWealth saved me. Auto-allocation gave
+                +89%.
+                Withdrawals take hours.</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+89
+                    %
+                  </p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">6
+                    months
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__content-card">
+              <div class="slider__content-card-header">
+                <img src="./assets/slider/@dsimon.1.jpg" alt="@dsimon.1"
+                  class="slider__content-card-header-img">
+                <p
+                  class="slider__content-card-header-name">@dsimon.1</p>
+              </div>
+              <p class="slider__content-card-text">I wanted
+                diversification.
+                My
+                $10k is split across 7 traders here. +38% in 2 months —
+                just
+                the
+                start!</p>
+              <div class="slider__content-card-line">
+                <div class="slider__content-card-line-returns">
+                  <p
+                    class="slider__content-card-line-returns-title">Returns</p>
+                  <p
+                    class="slider__content-card-line-returns-percent">+38
+                    %
+                  </p>
+                </div>
+                <div class="slider__content-card-line-invest">
+                  <p
+                    class="slider__content-card-line-invest-title">Invest
+                    Period</p>
+                  <p class="slider__content-card-line-invest-period">2
+                    months
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analystPredicts">
+        <p class="analystPredicts__title">Analyst Predicts<br>
+          <span class="gradient-letters">$8 Trillion Crypto</span>
+          Market
+          Cap by 2026</p>
+        <p class="analystPredicts__text">Start earning 20 %+ monthly
+          today!</p>
+        <button class="analystPredicts__button" onclick="showModal()">Start
+          Earning <img
+            src="./assets/startNow/arrow.svg"
+            alt="arrow"></button>
+      </div>
+
+      <div class="faq" id="faq">
+        <img src="./assets/faq/backgraund.svg" alt="faq"
+          class="faq__bg">
+        <h2 class="faq__title">FAQ</h2>
+        <div class="faq__accordions">
+          <div class="faq__accordion">
+            <div class="faq__accordion-header">
+              <p>How We Pick the Best?</p>
+              <div class="faq__accordion-header-arrow"> <svg width="16"
+                  height="16" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.8437 4.37353C14.3369 3.87549 15.1367 3.87549 15.63 4.37353C16.1233 4.87156 16.1233 5.67903 15.63 6.17706L9.48865 12.3775C8.66649 13.2075 7.33351 13.2075 6.51135 12.3775L0.369972 6.17707C-0.123323 5.67903 -0.123323 4.87156 0.369971 4.37353C0.863264 3.87549 1.66305 3.87549 2.15635 4.37353L8 10.2733L13.8437 4.37353Z"
+                    fill="#5E5E5E" />
+                </svg></div>
+            </div>
+            <div class="faq__accordion-content">
+              <ol class="faq__accordion-content-list">
+                <li>— <b>Brutal Filtering:</b> Reject 99% of traders with
+                  volatile
+                  histories.</li>
+                <li>— <b>24/7 Monitoring:</b> Instantly reallocate funds
+                  if a
+                  strategy
+                  underperforms.</li>
+                <li>— <b>Full Transparency:</b> Review every trader’s
+                  stats in
+                  your
+                  portfolio.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__accordion">
+            <div class="faq__accordion-header">
+              <p>Why Trust Us?</p>
+              <div class="faq__accordion-header-arrow">
+                <svg width="16"
+                  height="16" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.8437 4.37353C14.3369 3.87549 15.1367 3.87549 15.63 4.37353C16.1233 4.87156 16.1233 5.67903 15.63 6.17706L9.48865 12.3775C8.66649 13.2075 7.33351 13.2075 6.51135 12.3775L0.369972 6.17707C-0.123323 5.67903 -0.123323 4.87156 0.369971 4.37353C0.863264 3.87549 1.66305 3.87549 2.15635 4.37353L8 10.2733L13.8437 4.37353Z"
+                    fill="#5E5E5E" />
+                </svg>
+              </div>
+            </div>
+            <div class="faq__accordion-content">
+              — <b>7+ years</b> in algorithmic trading.<br>
+              — <b>1,500+ investors</b> earning passively.<br>
+              — <b>24/7 support</b> and weekly email reports.<br>
+            </div>
+          </div>
+          <div class="faq__accordion">
+            <div class="faq__accordion-header">
+              <p>Why Us Over Bybit?
+              </p>
+              <div class="faq__accordion-header-arrow"> <svg width="16"
+                  height="16" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.8437 4.37353C14.3369 3.87549 15.1367 3.87549 15.63 4.37353C16.1233 4.87156 16.1233 5.67903 15.63 6.17706L9.48865 12.3775C8.66649 13.2075 7.33351 13.2075 6.51135 12.3775L0.369972 6.17707C-0.123323 5.67903 -0.123323 4.87156 0.369971 4.37353C0.863264 3.87549 1.66305 3.87549 2.15635 4.37353L8 10.2733L13.8437 4.37353Z"
+                    fill="#5E5E5E" />
+                </svg></div>
+            </div>
+            <div class="faq__accordion-content">
+              «Bybit gives market access — we
+              deliver <b>ready-made success:</b> <br>
+              — <b>Save Time:</b> No endless chart analysis. We’ve found the
+              consistent
+              winners. <br>
+              — <b>Diversify Easily:</b> Invest in 3–5 traders via one
+              account.
+              Bybit
+              requires multiple accounts and manual work. <br>
+              — <b>No Emotional Trading:</b> Even pros make mistakes. Our
+              algorithm
+              copies only verified trades. <br>
+              — <b>+30% Higher Returns:</b> Our top 5% traders outperform
+              Bybit’s
+              averages. <br>
+              <b>Your money works — you relax.</b>»
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="startNowSecond">
+        <div class="startNowSecond__content">
+          <p class="startNowSecond__title"><span
+              class="gradient-letters">Start
+              Now</span> — Your
+            Profitable<br>Month Begins
+            Tomorrow!</p>
+          <p class="startNowSecond__text">Click «Start» — watch your
+            capital
+            grow</p>
+          <button class="startNowSecond__button" onclick="showModal()">Start
+            Earning
+            <img
+              src="./assets/startNow/arrow.svg" alt="arrow"></button>
+        </div>
+        <div class="startNowSecond__images">
+          <img src="./assets/startNow/hand.png" alt="hand"
+            class="startNowSecond__images-hand">
+          <img src="./assets/startNow/coins.png" alt="coins"
+            class="startNowSecond__images-coins">
+          <img src="./assets/startNow/coin.png" alt="coin"
+            class="startNowSecond__images-coin">
+        </div>
+        <div class="startNowSecond__line"><p
+            class="startNowSecond__line-text"><b>Important:</b> Trading
+            carries
+            risks. Past
+            performance does not guarantee future results.</p></div>
+      </div>
+
+    </div>
+    <footer class="footer">
+      <p class="footer__text">© 2019-2025 «BybitWealth». All rights
+        reserved</p>
+    </footer>
+  </body>
+</html>
