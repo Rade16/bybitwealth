@@ -1,0 +1,278 @@
+{ 
+  "modal": {
+      "title": "Formu doldurun ve yatırım araçlarımız hakkında ücretsiz tavsiye alın",
+      "labels": {
+        "name": "Ad",
+        "surname": "Soyadı",
+        "email": "Email",
+        "phone": "Telefon"
+      },
+      "placeholders": {
+        "name": "Ad",
+        "surname": "Soyadı"
+      },
+      "button": "Formu gönderin ve kazanmaya başlayın",
+      "privacy": {
+        "text": "«Formu gönder ve Kazanmaya Başla» seçeneğine tıklayarak aşağıdakileri kabul etmiş oluyorsunuz",
+        "linkText": "gizlilik politikasıyla"
+      },
+      "errors": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "phone": "Invalid phone number format"
+      }
+  },
+  "header": {
+    "profitExamples": "Kâr Örnekleri",
+    "ourTraders": "Tüccarlarımız",
+    "calculator": "Hesaplayıcı",
+    "testimonials": "Yorumları"
+  },
+  "welcome": {
+      "backedBy": "Bybit destekli ",
+      "title": {
+        "highlight": "Bybit'in En İyi  ",
+        "main": "Tüccarlarıyla Pasif Gelir  —",
+        "sub1": "Paranız Sizin ",
+        "sub2":"Yerinize Çalışsın!"
+      },
+      "content": {
+        "part1": "Profesyonel programcılar ve deneyimli tüccarlardan oluşan ekibimiz, ",
+        "highlight": " Bybit platformundaki her tüccarı tarayan ve analiz eden son teknoloji yazılım geliştirdi.",
+        "part2": "Bizimle kanıtlanmış profesyonellere verimli bir şekilde yatırım yapabilir ve pasif kazanç sağlayabilirsiniz."
+      },
+      "animation": {
+        "trader":"Profesyonel trader",
+        "profit": "Kâr",
+        "buy": "AL",
+        "sell": "SAT"
+      }
+  },
+  
+  "why": {
+    "title":"Neden Biz?",
+    "algorithm": {
+        "title": "Benzersiz Seçim Algoritması",
+        "description": "Bybit tüccarlarının binlercesini analiz ederek, şu kriterlere göre en iyi %1'ini seçiyoruz:",
+        "criteria": {
+            "title1": "Kararlı Kâr",
+            "value1": "min 10%",
+            "title2": "Düşük Çekilmeler",
+            "value2": "maks 5–8%",
+            "title3": "Yıllık Deneyim",
+            "value3": "2+ yıl"
+          
+        }
+      },
+      "risk": {
+        "title": "Risk Çeşitlendirmesi",
+        "text": "Fonlarınız 10–15 seçkin tüccar arasında dağıtılır — tek bir stratejiye bağımlılık yok."
+      },
+      "effort": {
+        "title": "Sıfır Çaba Gerektirir",
+        "text": "Grafik, analiz veya stres yok. Yatırım yapın — gerisini biz hallederiz."
+      },
+      "start": {
+        "title": "Küçük adımlarla başlayın ve kazancınızı büyütün — dan Başlayın"
+      }
+    
+  },
+  "profit": {
+    "title": "Kâr <br>Örnekleri",
+    "subtitle": "6 Ay",
+    "cards": {
+      "card1": {
+        "title": "Muhafazakâr Portföy",
+        "percent": "+%12–18 ",
+        "text": "Aylık (düşük risk)"
+      },
+      "card2":{
+        "title": "Dengeli Portföy",
+        "percent": "+%20–25",
+        "text": "Aylık"
+      },
+      "card3":{
+        "title": "Premium Tüccarlar",
+        "percent": "+%100'e",
+        "text": "Aylık (yüksek risk)"
+      }
+    }
+  },
+  "security": {
+    "title": "Güvenlik<br>Garantileri",
+    "cards": {
+        "text1": "Fonlar çoklu imzalı cüzdanlarda saklanır.",
+        "text2": "Haftalık şeffaflık raporları: Paranızın nereye yatırıldığını takip edin.",
+        "text3": "Acil durumlar için %5 sigorta fonu.",
+        "text4": "Anında para çekme işlemleri, 7/24."
+    }
+  },
+  "traders": {
+    "title": "Tüccarlarımız",
+    "subtitle": "2024'te en iyi 3 tüccarımız müşterilere %500+ yıllık getiri sağladı.",
+    "cards": {
+      "card1":{
+        "type": "Muhafazakâr Portföy",
+        "roi": "90 günde %40.31 ROI ile "
+      },
+      "card2":{
+        "type": "Muhafazakâr Portföy",
+        "roi": "90 günde %51.50 ROI ile"
+      },
+      "card3":{
+        "type": "Agresif Tüccar",
+        "roi": "90 günde %334.77 ROI ile"
+      }
+    }
+  },
+  "startNow": {
+    "title": {
+      "highlight": "Hemen Başla ",
+      "rest": " — karlı ayınız yarın başlasın!"
+    },
+    "text": "Başla''ya tıklayın — sermayenizin büyümesini izleyin.",
+    "button": "Kazanmaya Başla"
+  },
+  "calculator": {
+    "title": "Yatırımlar İçin Bileşik Faiz Hesaplayıcı",
+    "subtitle": "Başlangıç sermayenizi, yatırım sürenizi ve oranı girin (aylık ROI × 12 ay).",
+    "labels": {
+      "capital": "Başlangıç sermayenizi",
+      "period": "Yatırım sürenizi:",
+      "rate": "Oranı girin: ",
+      "reinvest": "Yeniden yatırım yapmak"
+    },
+    "results": {
+      "profit": "Kâr",
+      "total": "Toplam",
+      "returns": "Tüccarlarımızın yıllık getirileri:",
+      "types": {
+        "conservative": "Muhafazakâr",
+        "highRisk": "Yüksek Risk"
+      },
+      "conservativeValue":"%100+",
+      "upTo": "%1.100'e kadar"
+    },
+    "tooltip": "aylık ROI × 12 ay",
+    "year": " yıl"
+  },
+  "hesitation": {
+      "title": "Hâlâ tereddüt mü ediyorsunuz?",
+      "content": "Bitcoin son 2 yılda %600 yükseldi.<br>Aylık %20+ kazanmaya bugün başlayın!",
+      "button": "Kazanmaya Başla"
+  },
+  "testimonials": {
+    "title": "Müşteri Yorumları",
+    "cards": {
+      "returns": "Getiri",
+      "investPeriod": "Yatırım Süresi",
+      "card1": {
+        "name": "@bartekwitam",
+        "text": "Eskiden manuel işlemlerle para kaybediyordum. BybitWealth'i denedim — en iyi karar! 6 ayda yatırımım %67 arttı. Gizli ücret yok, tam şeffaflık.",
+        "returnsPercent": "+%67",
+        "period": "8 ay"
+      },
+      "card2":{
+        "name": "@scaligero_",
+        "text": "Şüpheciydim, ancak tüccar istatistikleri beni ikna etti. 5k → 10.6k yaptım. Destek 10 dakikada yanıt veriyor. Riskten kaçınanlar için ideal.",
+        "returnsPercent": "+%112",
+        "period": "1 yıl"
+      },
+      "card3":{
+        "name": "@miinko_k",
+        "text": "Dolandırıcılık korkusuyla ChainSecurity ile doğruladım (açık denetim). Şeffaf. 3 ayda %23 — bankadan iyi.",
+        "returnsPercent": "+%23",
+        "period": "3 ay"
+      },
+      "card4":{
+        "name": "@michal.ba",
+        "text": "Kriptoda 2k kaybettikten sonra pes etmek üzereydim. Arkadaşım BybitWealth'i önerdi. 1k → 2.45k yaptım. Artık huzurluyum.",
+        "returnsPercent": "+%45",
+        "period": "5 ay"
+      },
+      "card5":{
+        "name": "@norbert_bb",
+        "text": "IT'de çalışıyorum — işlem için zamanım yok. BybitWealth beni kurtardı. Otomatik dağılımla %89 kazandım. Para çekme işlemi saatler sürüyor.",
+        "returnsPercent": "+%89",
+        "period": "6 ay"
+      },
+      "card6":{
+        "name": "@dsimon.1",
+        "text": "Çeşitlendirme istedim. 10k$'ım 7 tüccara dağıtıldı. 2 ayda %38 — bu sadece başlangıç!",
+        "returnsPercent": "+%38",
+        "period": "2 ay"
+      }
+    }
+  },
+  "analystPredicts": {
+    "title": {
+      "base": "Analistler 2025'e kadar",
+      "highlight": "kripto piyasa değerinin 8 trilyon $ olacağını ",
+      "rest": "öngörüyor"
+    },
+    "text": "Aylık %20+ kazanmaya bugün başlayın!",
+    "button": "Kazanmaya Başla "
+  },
+  "faq": {
+    "title": "FAQ",
+    "accordions": {
+      "question1":{
+        "title": "En İyileri Nasıl Seçiyoruz?",
+        "answers": {
+          "answer1": "— <b>Sert Filtreleme:</b> Volatil geçmişi olan tüccarların %99'unu eliyoruz.",
+          "answer2": "— <b>7/24 İzleme:</b> Strateji performans düşerse fonları anında yeniden dağıtıyoruz.",
+          "answer3": "— <b>Tam Şeffaflık:</b> Portföyünüzdeki her tüccarın istatistiklerini inceleyin."
+        }
+      },
+      "question2":{
+        "title": "Neden Güvenmelisiniz?",
+        "answers": {
+          "answer1": "— <b>7+ yıllık</b> algoritmik ticaret deneyimi.",
+          "answer2": "— <b>1.500+ yatırımcı</b> pasif gelir elde ediyor.",
+          "answer3":"— <b>7/24 destek</b> ve haftalık e-posta raporları."
+        }
+      },
+      "question3":{
+        "title": "Neden Bybit Değil Biz?",
+        "answer": "«Bybit piyasaya erişim sağlar — biz hazır <b>başarı sunarız:</b> <br> — <b>Zaman Tasarrufu:</b> Sonsuz grafik analizi yok. Tutarlı kazananları biz bulduk. <br> — <b>Çeşitlendirme Kolaylığı:</b> Tek hesapla 3–5 tüccara yatırım yapın. Bybit'te birden fazla hesap gerekir. <br> — <b>Duygusuz İşlem:</b> Profesyoneller bile hata yapar. Algoritmamız sadece onaylı işlemleri kopyalar. <br> — <b>%30 Daha Yüksek Getiri:</b> En iyi %5'lik tüccarlarımız Bybit ortalamalarını geçiyor. <br> <b>Paranız çalışır — siz rahatlayın.</b>»"
+      }
+    }
+  },
+  "startNowSecond": {
+      "title": {
+        "highlight": "Hemen Başla ",
+        "rest": "— karlı ayınız yarın başlasın!"
+      },
+      "text": "Ne kadar erken yatırım yaparsanız, o kadar çok kazanırsınız. Premium portföy kontenjanları sınırlı!",
+      "button": "Kazanmaya Başla",
+      "disclaimer": "<b>Önemli:</b> Ticaret risk içerir. Geçmiş performans gelecek sonuçların garantisi değildir."
+  },
+  "footer": {
+      "address": "Legal address: 51, Griva Digeni, ATHINEON COURT Office: 202, Paphos 8047, Cyprus",
+      "copyright": "© 2019-2025 «BybitWealth». All rights reserved",
+      "links": {
+        "telegram": {
+          "image": "./assets/footer/tg-{lang}.svg",
+          "text": "@bybitwealth",
+          "url": "https://t.me/bybitwealth",
+          "alt": "Telegram icon"
+        },
+        "email": {
+          "image": "./assets/footer/mail-{lang}.svg",
+          "text": "info@bybitwealth.com",
+          "alt": "Email icon"
+        }
+      }
+  },
+  "call": {
+    "title":"Aramayı kaçırmayın",
+    "subtitle":"24 saat içinde arama bekleyin.",
+    "block": {
+      "title": "«Bybit piyasaya erişim sağlar — biz hazır başarı sunarız»",
+      "achievementText1": "yıllık algoritmik ticaret deneyim.",
+      "achievementText2": "yatırımcı pasif gelir elde ediyor.",
+      "achievementText3": "destek ve haftalık raporlar."
+    }
+  }
+}
+

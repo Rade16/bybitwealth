@@ -29,26 +29,16 @@ function initCalculator() {
 function updateInitialCapital(e) {
   const value = initialCapitalSteps[e.target.value];
   document.querySelector("#initialCapital").innerHTML =
-    value.toLocaleString() + `<span class="gray"> $</span>`;
-  updateRangeBackground(e.target, e.target.value, e.target.max);
-  calculateProfit();
-}
-
-// Обновление периода инвестиций
-function updateInvestmentPeriod(e) {
-  const years = parseInt(e.target.value) + 1;
-  document.querySelector(
-    "#investmentPeriod"
-  ).innerHTML = `<b>${years} years</b>`;
+    `<b>${value.toLocaleString()}</b>` + `<span class="gray"> $</span>`;
   updateRangeBackground(e.target, e.target.value, e.target.max);
   calculateProfit();
 }
 
 // Обновление процентной ставки
 function updateInterestRate(e) {
-  const rate = interestRateSteps[e.target.value - 2]; // т.к. min=2
+  const rate = interestRateSteps[e.target.value - 2];
   document.querySelector("#interestRate").innerHTML = `<b>${rate}%</b>`;
-  updateRangeBackground(e.target, e.target.value - 2, 20); // 21 элемент (0-20)
+  updateRangeBackground(e.target, e.target.value - 2, 20);
   calculateProfit();
 }
 
@@ -64,18 +54,17 @@ reinvestCheckbox.addEventListener("change", calculateProfit);
 // Расчет прибыли
 function updateInvestmentPeriod(e) {
   const value = parseInt(e.target.value);
-  const displayedYears = value + 1; // Для отображения "1-10 лет"
+  const displayedYears = value + 1;
   document.querySelector(
     "#investmentPeriod"
-  ).innerHTML = `<b>${displayedYears} years</b>`;
+  ).innerHTML = `<b>${displayedYears}</b>`;
   updateRangeBackground(e.target, value, e.target.max);
   calculateProfit();
 }
 
-// В функции расчета прибыли используйте исходное значение
 function calculateProfit() {
   const initialCapital = initialCapitalSteps[initialCapitalRange.value];
-  const years = parseInt(investmentPeriodRange.value) + 1; // Исправлено: +1 для реального срока
+  const years = parseInt(investmentPeriodRange.value) + 1;
   const annualRate = interestRateSteps[interestRateRange.value - 2] / 100;
   const isReinvest = reinvestCheckbox.checked;
 
@@ -85,7 +74,7 @@ function calculateProfit() {
     const n = 12;
     total = initialCapital * Math.pow(1 + annualRate / n, n * years);
   } else {
-    total = initialCapital * (1 + annualRate * years); // Формула простых процентов
+    total = initialCapital * (1 + annualRate * years);
   }
 
   profit = total - initialCapital;

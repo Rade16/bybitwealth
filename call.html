@@ -6,6 +6,7 @@
     <title>Bybitwealth</title>
     <link rel="stylesheet" href="./scss/style.css">
     <script src="./js/burger.js" defer></script>
+    <script src="./js/i18n.js"></script>
   </head>
   <body>
 
@@ -20,21 +21,30 @@
             <label class="burger" for="burger-checkbox"></label>
           </div>
           <ul class="header__list">
-            <li class="header__list-item"><a href="./index.html#profit"
-                class="header__list-item-link">Profit
-                Examples</a></li>
-            <li class="header__list-item"><a href="./index.html#ourTraders"
-                class="header__list-item-link">Our
-                Traders</a></li>
+            <li class="header__list-item"><a href="#profit"
+                class="header__list-item-link"
+                data-i18n="header.profitExamples"></a></li>
+            <li class="header__list-item"><a href="#ourTraders"
+                class="header__list-item-link"
+                data-i18n="header.ourTraders"></a></li>
             <li class="header__list-item"><a
-                href="./index.html#calculator"
-                class="header__list-item-link">Calculator</a></li>
+                href="#calculator"
+                class="header__list-item-link"
+                data-i18n="header.calculator"></a></li>
             <li class="header__list-item"><a
-                href="./index.html#testimonials"
-                class="header__list-item-link">Testimonials</a></li>
-            <li class="header__list-item"><a href="./index.html#faq"
+                href="#testimonials"
+                class="header__list-item-link"
+                data-i18n="header.testimonials"></a></li>
+            <li class="header__list-item"><a href="#faq"
                 class="header__list-item-link">FAQ</a></li>
           </ul>
+          <div class="header__select">
+            <button class="header__select-button"
+              id="languageSelector"><span
+                id="languageSelectorText"></span> <img src="./assets/arrow.svg"
+                alt></button>
+            <div class="header__options-container" id="languageOptions"></div>
+          </div>
         </nav>
       </div>
     </header>
@@ -602,34 +612,34 @@
 
         <div class="call__content">
           <div class="call__content-text">
-            <p class="call__content-text-title">Don’t miss a call</p>
-            <p class="call__content-text-subtitle">Expect a call within 24
-              hours.</p>
+            <p class="call__content-text-title" data-i18n="call.title"></p>
+            <p class="call__content-text-subtitle"
+              data-i18n="call.subtitle"></p>
           </div>
           <div class="call__content-block">
-            <p class="call__content-block-title">«Bybit gives market access —
-              we deliver ready-made success»
+            <p class="call__content-block-title"
+              data-i18n="call.block.title">
             </p>
             <div class="call__content-block-line">
               <div class="call__content-block-line-achievement">
                 <p class="call__content-block-line-achievement-title"><span
                     class="gradient-letters">7+</span></p>
-                <p class="call__content-block-line-achievement-text">years in
-                  algorithmic trading
+                <p class="call__content-block-line-achievement-text"
+                  data-i18n="call.block.achievementText1">
                 </p>
               </div>
               <div class="call__content-block-line-achievement">
                 <p class="call__content-block-line-achievement-title"><span
                     class="gradient-letters">1,500+</span></p>
-                <p class="call__content-block-line-achievement-text">investors
-                  earning passively
+                <p class="call__content-block-line-achievement-text"
+                  data-i18n="call.block.achievementText2">
                 </p>
               </div>
               <div class="call__content-block-line-achievement">
                 <p class="call__content-block-line-achievement-title"><span
                     class="gradient-letters">24/7</span></p>
-                <p class="call__content-block-line-achievement-text">support and
-                  weekly email reports
+                <p class="call__content-block-line-achievement-text"
+                  data-i18n="call.block.achievementText3">
                 </p>
               </div>
             </div>
@@ -641,7 +651,29 @@
       </div>
     </div>
     <footer class="call__footer">
-      <p>© 2019-2025 «BybitWealth». All rights reserved</p>
+      <div class="footer__container">
+        <p class="footer__address">Legal address: 51, Griva Digeni,
+          ATHINEON COURT Office: 202,
+          Paphos 8047, Cyprus</p>
+        <p class="footer__text">© 2019-2025 «BybitWealth». All rights
+          reserved</p>
+        <div class="footer__links">
+
+          <div class="footer__links-link">
+            <img src="./assets/footer/tg.svg" alt
+              class="footer__links-link-img">
+            <p class="footer__links-link-text"><a
+                href="https://t.me/bybitwealth"
+                target="_blank"
+                class="footer__links-link-href">@bybitwealth</a></p>
+          </div>
+          <div class="footer__links-link">
+            <img src="./assets/footer/mail.svg" alt
+              class="footer__links-link-img">
+            <p class="footer__links-link-text">info@bybitwealth.com</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

@@ -39,19 +39,36 @@
   box-shadow: 0px 4.54px 9.07px 0px rgb(232, 156, 0);
 }
 .welcome__content-animation-buy {
-  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: #58585e;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #ffffff;
   position: absolute;
-  bottom: 135px;
-  left: 215px;
+  bottom: 125px;
+  left: 235px;
   animation: buy 5s ease infinite;
 }
 .welcome__content-animation-sell {
+  transform: translate(-50%, -50%);
+  left: 325px;
+  top: 65px;
+  background: #58585e;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #ffffff;
   position: absolute;
-  right: 185px;
-  top: 55px;
   animation: sell 5s ease infinite;
 }
 .welcome__content-animation-firstTrader {
+  position: absolute;
+  animation: trader1 5s ease infinite;
+}
+.welcome__content-animation-firstTrader-trader {
   position: absolute;
   padding: 2px;
   width: -moz-fit-content;
@@ -59,12 +76,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   background: rgb(255, 255, 255);
   border-radius: 100px;
-  bottom: 0px;
-  left: 40px;
-  animation: trader1 5s ease infinite;
+  gap: 8px;
+  right: 10px;
 }
 .welcome__content-animation-firstTrader-img {
   border-radius: 100px;
@@ -74,13 +89,18 @@
   font-size: 16px;
   font-weight: 400;
   padding-right: 14px;
+  white-space: nowrap;
 }
 .welcome__content-animation-firstTrader-cursor {
-  position: absolute;
   top: -20px;
   right: -10px;
 }
 .welcome__content-animation-secondTrader {
+  position: absolute;
+  animation: trader2 5s ease infinite;
+}
+.welcome__content-animation-secondTrader-trader {
+  left: 10px;
   position: absolute;
   padding: 2px;
   width: -moz-fit-content;
@@ -88,10 +108,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   background: rgb(255, 255, 255);
   border-radius: 100px;
-  animation: trader2 5s ease infinite;
+  gap: 8px;
 }
 .welcome__content-animation-secondTrader-img {
   border-radius: 100px;
@@ -101,33 +120,33 @@
   font-size: 16px;
   font-weight: 400;
   padding-right: 14px;
+  white-space: nowrap;
 }
 .welcome__content-animation-secondTrader-cursor {
-  position: absolute;
   top: -20px;
   left: -10px;
 }
 
 @keyframes trader1 {
   0% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px;
   }
   10% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px;
   }
   20% {
-    bottom: 70px;
-    left: 25px;
+    bottom: 105px;
+    left: 220px;
   }
   90% {
-    bottom: 70px;
-    left: 25px;
+    bottom: 105px;
+    left: 220px;
   }
   100% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px;
   }
 }
 @keyframes buy {
@@ -152,24 +171,24 @@
 }
 @keyframes trader2 {
   0% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
   30% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
   40% {
-    right: -5px;
-    bottom: 280px;
+    right: 190px;
+    bottom: 315px;
   }
   90% {
-    right: -5px;
-    bottom: 280px;
+    right: 190px;
+    bottom: 315px;
   }
   100% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
 }
 @keyframes sell {
@@ -367,9 +386,65 @@ body {
   font-weight: 700;
   color: #ffffff;
 }
+.header__lang {
+  outline: none;
+  border: 0;
+  background: #f7a600;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 5px;
+}
+.header__select {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.header__select-button {
+  width: 100%;
+  border-radius: 10px;
+  text-align: left;
+  background: #ffbc35;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  gap: 5px;
+}
+.header__options-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffbc35;
+  color: #ffffff;
+  border-top: none;
+  display: none;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+.header__lang-option {
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.header__lang-option:hover {
+  background: #f1a200;
+}
+.header .header__options-container.show {
+  display: block;
+}
 
 .container {
-  max-width: 1320px;
+  width: 1320px;
   margin: 0 auto;
 }
 
@@ -379,10 +454,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .welcome__content {
   display: flex;
-  gap: 73px;
+  gap: 50px;
   align-items: center;
   align-self: center;
 }
@@ -391,7 +467,9 @@ body {
 }
 .welcome__content-block-bybit {
   color: #ffffff;
-  width: 204px;
+  padding: 8px 24px;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 40px;
   display: flex;
   align-items: center;
@@ -458,6 +536,8 @@ body {
   font-weight: 400;
 }
 .calculator__calc-capital-value {
+  color: #1e1e1e;
+  font-weight: 600;
   margin-top: 4px;
   width: 200px;
   height: 56px;
@@ -468,6 +548,10 @@ body {
 .calculator__calc-period {
   margin-top: 40px;
 }
+.calculator__calc-period-bold {
+  font-weight: bold;
+  color: #1e1e1e;
+}
 .calculator__calc-period-title {
   color: rgb(94, 94, 94);
   font-size: 16px;
@@ -475,6 +559,10 @@ body {
 }
 .calculator__calc-rate {
   margin-top: 40px;
+}
+.calculator__calc-rate-bold {
+  font-weight: bold;
+  color: #1e1e1e;
 }
 .calculator__calc-rate-stroke {
   position: relative;
@@ -493,7 +581,7 @@ body {
 .calculator__calc-rate-info-text {
   display: none;
   top: -20px;
-  right: 15px;
+  right: 5px;
   position: absolute;
   padding: 8px;
   width: 250px;
@@ -788,7 +876,7 @@ body {
   color: rgb(30, 30, 30);
   transform: rotate(7.59deg);
   top: 0px;
-  left: 170px;
+  left: 185px;
 }
 .profit__cards {
   display: flex;
@@ -817,8 +905,10 @@ body {
   background: linear-gradient(108.72deg, #404048 1.34%, #1b1b23 96.39%);
 }
 .profit__cards-card-title {
+  width: 310px;
   font-size: 24px;
   font-weight: 600;
+  text-align: center;
 }
 .profit__cards-card-procent {
   margin-top: 24px;
@@ -910,8 +1000,12 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   background: rgb(234, 234, 234);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .trader__cards-card-title {
+  text-align: center;
   color: rgb(30, 30, 30);
   font-size: 24px;
   font-weight: 600;
@@ -945,6 +1039,8 @@ body {
   background: url("../assets/startNow/grid.svg"), linear-gradient(108.72deg, #404048 1.34%, #1b1b23 96.39%);
 }
 .startNow__content {
+  position: relative;
+  z-index: 999;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -1124,7 +1220,7 @@ body {
   height: 332px;
 }
 .slider__content-card-header {
-  padding: 32px 32px 0 32px;
+  padding: 32px 25px 0 25px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1138,12 +1234,12 @@ body {
   font-weight: 700;
 }
 .slider__content-card-text {
-  padding: 0 32px;
+  padding: 0 25px;
   margin-top: 16px;
   line-height: 150%;
 }
 .slider__content-card-line {
-  padding: 16px 32px;
+  padding: 16px 25px;
   background: rgb(255, 255, 255);
   height: 100px;
   width: 100%;
@@ -1315,10 +1411,13 @@ body {
   background: url("../assets/startNow/grid.svg"), linear-gradient(108.72deg, #404048 1.34%, #1b1b23 96.39%);
 }
 .startNowSecond__content {
+  position: relative;
+  z-index: 999;
   width: -moz-fit-content;
   width: fit-content;
 }
 .startNowSecond__title {
+  width: 500px;
   font-size: 40px;
   font-weight: 600;
   color: rgb(255, 255, 255);
@@ -1328,6 +1427,7 @@ body {
   font-size: 400;
   font-size: 16px;
   color: rgb(255, 255, 255);
+  width: 400px;
 }
 .startNowSecond__button {
   cursor: pointer;
@@ -1391,16 +1491,59 @@ body {
   padding: 32px 0;
   background: rgb(14, 14, 14);
 }
+.footer__container {
+  width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
 .footer__text {
+  justify-self: center;
+  width: 220px;
   font-size: 16px;
   font-weight: 400;
   text-align: center;
   color: rgb(255, 255, 255);
+  grid-area: 1/2/2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__address {
+  justify-self: start;
+  color: #ffffff;
+  width: 237px;
+  grid-area: 1/1/2/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__links {
+  justify-self: end;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  grid-area: 1/3/2/4;
+  justify-content: center;
+}
+.footer__links-link {
+  display: flex;
+  gap: 10px;
+}
+.footer__links-link-text {
+  color: #ffffff;
+}
+.footer__links-link-href {
+  color: #ffffff;
 }
 
 .call {
   height: 100vh;
   background: url("./../assets/call/bg.svg"), #0e0e0e;
+  overflow: hidden;
 }
 .call__container {
   position: relative;
@@ -1438,6 +1581,7 @@ body {
   top: 200px;
 }
 .call__content-text-title {
+  text-align: center;
   color: rgb(245, 247, 250);
   font-size: 56px;
   font-weight: 600;
@@ -1491,7 +1635,6 @@ body {
   line-height: 150%;
 }
 .call__footer {
-  text-align: center;
   color: rgb(255, 255, 255);
   font-size: 16px;
   font-weight: 400;
@@ -1623,6 +1766,9 @@ body {
   .security__cards-card-content {
     padding: 20px;
   }
+  .footer__container {
+    width: 1000px;
+  }
 }
 @media (max-height: 800px) {
   .modal__content {
@@ -1680,11 +1826,18 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+  .header__select {
+    display: none;
+    margin-top: 20px;
+    justify-self: center;
+  }
   .welcome {
-    height: 925px;
+    padding-bottom: 30px;
+    padding-top: 100px;
+    height: auto;
   }
   .welcome__content {
-    margin-top: 100px;
+    height: auto;
     flex-direction: column;
     gap: 0;
   }
@@ -1692,7 +1845,8 @@ body {
     width: 343px;
   }
   .welcome__content-block-bybit {
-    width: 204px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .welcome__content-block-title {
     font-size: 32px;
@@ -1740,16 +1894,16 @@ body {
     font-size: 15.17px;
   }
   .welcome__content-animation-sell {
-    width: 27.5px;
-    height: 18px;
-    right: 85px;
-    top: 35px;
+    font-size: 8px;
+    padding: 3px 5px;
+    left: 210px;
+    top: 40px;
   }
   .welcome__content-animation-buy {
-    width: 27.5px;
-    height: 18px;
-    left: 95px;
-    bottom: 110px;
+    font-size: 8px;
+    padding: 3px 5px;
+    left: 110px;
+    bottom: 105px;
   }
   .welcome__content-animation-firstTrader {
     gap: 6px;
@@ -2029,6 +2183,11 @@ body {
   }
   .slider__content-card {
     width: 301px;
+    height: 370px;
+  }
+  .slider__content-card-line {
+    gap: 0;
+    justify-content: space-between;
   }
   .slider__content-card-img {
     width: 100%;
@@ -2068,7 +2227,11 @@ body {
     padding: 64px 16px;
     height: 700px;
   }
+  .startNowSecond__text {
+    width: auto;
+  }
   .startNowSecond__title {
+    width: auto;
     font-size: 32px;
   }
   .startNowSecond__button {
@@ -2097,8 +2260,29 @@ body {
     align-items: center;
     justify-content: center;
   }
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+    width: 345px;
+  }
+  .footer__address {
+    width: 150px;
+    font-size: 12px;
+    grid-area: 1/1/2/2;
+  }
   .footer__text {
-    width: 240px;
+    grid-area: 2/1/3/3;
+  }
+  .footer__links {
+    grid-area: 1/2/2/3;
+  }
+  .footer__links-link {
+    font-size: 12px;
+  }
+  .footer__links-link-img {
+    width: 15px;
+    height: 15px;
   }
   .modal {
     align-items: end;
@@ -2227,45 +2411,45 @@ body {
 }
 @keyframes firstTraderMobile {
   0% {
-    bottom: 200px;
-    left: 10px;
+    bottom: 220px;
+    left: 120px;
   }
   10% {
-    bottom: 200px;
-    left: 10px;
+    bottom: 220px;
+    left: 120px;
   }
   20% {
-    bottom: 70px;
-    left: -10px;
+    bottom: 90px;
+    left: 100px;
   }
   90% {
-    bottom: 70px;
-    left: -10px;
+    bottom: 90px;
+    left: 100px;
   }
   100% {
-    bottom: 200px;
-    left: 10px;
+    bottom: 220px;
+    left: 120px;
   }
 }
 @keyframes secondTraderMobile {
   0% {
-    right: 20px;
-    bottom: 155px;
+    right: 100px;
+    bottom: 180px;
   }
   30% {
-    right: 20px;
-    bottom: 155px;
+    right: 100px;
+    bottom: 180px;
   }
   40% {
-    right: -15px;
-    bottom: 245px;
+    right: 90px;
+    bottom: 260px;
   }
   90% {
-    right: -15px;
-    bottom: 245px;
+    right: 90px;
+    bottom: 260px;
   }
   100% {
-    right: 20px;
-    bottom: 155px;
+    right: 100px;
+    bottom: 180px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,293 @@
+{
+  
+  "modal": {
+      "title": "Fill out form and get a free consultation on our investment instruments",
+      "labels": {
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "phone": "Phone"
+      },
+      "placeholders": {
+        "name": "Name",
+        "surname": "Surname"
+      },
+      "button": "Submit the form and start earning",
+      "privacy": {
+        "text": "By clicking «Submit the form and start earning», you agree to",
+        "linkText": "Privacy Policy"
+      },
+      "errors": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "phone": "Invalid phone number format"
+      }
+  },
+  "header": {
+    "profitExamples": "Profit Examples",
+    "ourTraders": "Our Traders",
+    "calculator": "Calculator",
+    "testimonials": "Testimonials"
+  },
+  "welcome": {
+      "backedBy": "Backed by",
+      "title": {
+        "highlight": "Passive Income ",
+        "main": "with Bybit’s Top Traders —",
+        "sub1": "Let your ",
+        "sub2":" money work for You!"
+      },
+      "content": {
+        "part1": "Our team of professional programmers and seasoned traders has developed cutting-edge software that ",
+        "highlight": " scans and analyzes every trader on the Bybit platform",
+        "part2": "With us, you can invest efficiently in proven professionals and earn passively"
+      },
+      "animation": {
+        "trader":"Professional trader",
+        "profit": "Profit",
+        "buy": "BUY",
+        "sell": "SELL"
+      }
+  },
+  
+  "why": {
+    "title":"Why Choose BybitWealth",
+    "algorithm": {
+        "title": "Unique Selection Algorithm",
+        "description": "We analyze thousands of Bybit traders, selecting the top 1% based on:",
+        "criteria": {
+          
+            "title1": "Stable Profit (monthly ROI)",
+            "value1": "10% min",
+            "title2": "Low Drawdowns",
+            "value2": "5-8% max",
+            "title3": "Experience",
+            "value3": "2+ years"
+          
+        }
+      },
+      "risk": {
+        "title": "Risk Diversification",
+        "text": "Your funds are spread across 10–15 elite traders — no reliance on a single strategy."
+      },
+      "effort": {
+        "title": "Zero Effort Required",
+        "text": "No charts, no analysis, no stress. Invest — we handle the rest."
+      },
+      "start": {
+        "title": "Begin small and scale your earnings —<br>Start from"
+      }
+    
+  },
+  "profit": {
+    "title": "Profit<br>Examples",
+    "subtitle": "6 Months",
+    "cards": {
+      "card1": {
+        "title": "Conservative Portfolio",
+        "percent": "+12-18%",
+        "text": "monthly (low risk)"
+      },
+      "card2":{
+        "title": "Balanced Portfolio",
+        "percent": "+20-25%",
+        "text": "monthly"
+      },
+      "card3":{
+        "title": "Premium Traders",
+        "percent": "Up to +100%",
+        "text": "monthly (high risk)"
+      }
+    }
+  },
+  "security": {
+    "title": "Security<br>Guarantees",
+    "cards": {
+        "text1": "Funds stored in multi-signature wallets",
+        "text2": "Weekly transparency reports: Track where your money is invested",
+        "text3": "5% insurance fund for emergencies",
+        "text4": "Instant withdrawals to your wallet at any time"
+    }
+  },
+  "traders": {
+    "title": "Meet Our Traders",
+    "subtitle": "Our top 3 traders delivered 500%+ annual returns to clients in 2023",
+    "cards": {
+      "card1":{
+        "type": "Conservative trader",
+        "roi": "40.31% ROI in 90 days"
+      },
+      "card2":{
+        "type": "Conservative trader",
+        "roi": "51.50% ROI in 90 days"
+      },
+      "card3":{
+        "type": "Aggressive trader",
+        "roi": "334.77% ROI in 90 days"
+      }
+    }
+  },
+  "startNow": {
+    "title": {
+      "highlight": "Start Now ",
+      "rest": " — Your Profitable Month Begins Tomorrow!"
+    },
+    "text": "Click «Start» — watch your capital grow",
+    "button": "Start Earning"
+  },
+  "calculator": {
+    "title": "Calculator for Compound Interest on Investments",
+    "subtitle": "Input your initial capital, investment period, and rate",
+    "labels": {
+      "capital": "Initial capital",
+      "period": "Investment period:",
+      "rate": "Interest rate: ",
+      "reinvest": "Reinvest Earnings"
+    },
+    "results": {
+      "profit": "Your profit",
+      "total": "Total",
+      "returns": "Our traders’ annual returns:",
+      "types": {
+        "conservative": "Conservative",
+        "highRisk": "Higher Risk"
+      },
+      "conservativeValue":"100%+",
+      "upTo": "Up to 1,100%"
+    },
+    "tooltip": "Calculated as trader’s monthly ROI × 12 months",
+    "year":" years"
+  },
+  "hesitation": {
+      "title": "Still hesitating?",
+      "content": "Bitcoin surged 600% in the last 2 years.<br>Start earning 20%+ monthly today!",
+      "button": "Start Earning"
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "cards": {
+      "returns": "Returns",
+      "investPeriod": "Invest Period",
+      "card1": {
+        "name": "@bartekwitam",
+        "text": "I used to lose money trading manually. Tried BybitWealth — best decision! My deposit grew 67% in 6 months. No hidden fees, totally transparent.",
+        "returnsPercent": "+67 %",
+        "period": "8 months"
+      },
+      "card2":{
+        "name": "@scaligero_",
+        "text": "I’m a skeptic, but their trader stats convinced me. Invested 5k→10.6k in a year. Support replies in 10 mins. Perfect for risk-averse investors.",
+        "returnsPercent": "+112 %",
+        "period": "1 year"
+      },
+      "card3":{
+        "name": "@miinko_k",
+        "text": "I feared a scam but verified via ChainSecurity (open audit). Transparent. +23% in 3 months beats my bank.",
+        "returnsPercent": "+23 %",
+        "period": "3 months"
+      },
+      "card4":{
+        "name": "@michal.ba",
+        "text": "After losing 2k in crypto, I nearly quit. My friend recommended BybitWealth. Invested 1k → $2.45k. Now I sleep soundly.",
+        "returnsPercent": "+45 %",
+        "period": "5 months"
+      },
+      "card5":{
+        "name": "@norbert_bb",
+        "text": "I’m in IT — no time for trading. BybitWealth saved me. Auto-allocation gave +89%. Withdrawals take hours.",
+        "returnsPercent": "+89 %",
+        "period": "6 months"
+      },
+      "card6":{
+        "name": "@dsimon.1",
+        "text": "I wanted diversification. My $10k is split across 7 traders here. +38% in 2 months — just the start!",
+        "returnsPercent": "+38 %",
+        "period": "2 months"
+      }
+    },
+    "labels": {
+      "returns": "Returns",
+      "period": "Invest Period",
+      "months": "months",
+      "years": "years"
+    }
+  },
+  "analystPredicts": {
+    "title": {
+      "base": "Analyst Predicts",
+      "highlight": "$8 Trillion Crypto ",
+      "rest": "Market Cap by 2026"
+    },
+    "text": "Start earning 20%+ monthly today!",
+    "button": "Start Earning"
+  },
+  "faq": {
+    "title": "FAQ",
+    "background": "./assets/faq/background-{lang}.svg",
+    "accordions": {
+      "question1":{
+        "title": "How We Pick the Best?",
+        "answers": {
+          "answer1": "— <b>Brutal Filtering:</b> Reject 99% of traders with volatile histories.",
+          "answer2": "— <b>24/7 Monitoring:</b> Instantly reallocate funds if a strategy underperforms.",
+          "answer3": "— <b>Full Transparency:</b> Review every trader’s stats in your portfolio."
+        }
+      },
+      "question2":{
+        "title": "Why Trust Us?",
+        "answers": {
+          "answer1": "— <b>7+ years</b> in algorithmic trading",
+          "answer2": "— <b>1,500+ investors</b> earning passively",
+          "answer3":"— <b>24/7 support</b> and weekly email reports"
+        }
+      },
+      "question3":{
+        "title": "Why Us Over Bybit?",
+        "answer": "«Bybit gives market access — we deliver <b>ready-made success:</b> <br> — <b>Save Time:</b> No endless chart analysis. We’ve found the consistent winners. <br> — <b>Diversify Easily:</b> Invest in 3–5 traders via one account. Bybit requires multiple accounts and manual work. <br> — <b>No Emotional Trading:</b> Even pros make mistakes. Our algorithm copies only verified trades. <br> — <b>+30% Higher Returns:</b> Our top 5% traders outperform Bybit’s averages. <br> <b>Your money works — you relax.</b>»"
+      }
+    },
+    "labels": {
+      "years": "years",
+      "investors": "investors"
+    }
+  },
+  
+  "startNowSecond": {
+      "title": {
+        "highlight": "Start Now ",
+        "rest": "— Your Profitable Month Begins Tomorrow!"
+      },
+      "text": "The sooner you invest, the sooner you profit. Premium portfolio slots are limited!",
+      "button": "Start Earning",
+      "disclaimer": "<b>Important:</b> Trading carries risks. Past performance does not guarantee future results."
+  },
+  "footer": {
+      "address": "Legal address: 51, Griva Digeni, ATHINEON COURT Office: 202, Paphos 8047, Cyprus",
+      "copyright": "© 2019-2025 «BybitWealth». All rights reserved",
+      "links": {
+        "telegram": {
+          "image": "./assets/footer/tg-{lang}.svg",
+          "text": "@bybitwealth",
+          "url": "https://t.me/bybitwealth",
+          "alt": "Telegram icon"
+        },
+        "email": {
+          "image": "./assets/footer/mail-{lang}.svg",
+          "text": "info@bybitwealth.com",
+          "alt": "Email icon"
+        }
+      }
+  },
+
+  "call": {
+    "title":"Don’t miss a call",
+    "subtitle":"Expect a call within 24 hours.",
+    "block": {
+      "title": "«Bybit gives market access — we deliver ready-made success»",
+      "achievementText1": "years in algorithmic trading",
+      "achievementText2": "investors earning passively",
+      "achievementText3": "support and weekly email reports"
+    }
+  }
+}
+

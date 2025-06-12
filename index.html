@@ -14,54 +14,63 @@
     <script src="./js/modal.js" defer></script>
     <script src="./js/graphAnimation.js" defer></script>
     <script src="./js/burger.js" defer></script>
+    <script src="./js/i18n.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet">
+
   </head>
   <body>
     <div class="modal" id="modal">
       <div class="modal__content">
         <img src="./assets/close.svg" alt="close" class="modal__content-close"
           onclick="closeModal()">
-        <p class="modal__content-title">Fill out form and get a free
-          consultation
-          on our investment
-          instruments.</p>
+        <p class="modal__content-title" data-i18n="modal.title"></p>
         <form action class="modal__content-form" id="form" novalidate>
-          <label for="name" class="modal__content-form-label">Name</label>
-          <input type="text" placeholder="Name" id="name" required
+          <label for="name" class="modal__content-form-label"
+            data-i18n="modal.labels.name"></label>
+          <input type="text" data-i18n-placeholder="modal.placeholders.name"
+            id="name" required
             data-validate="required"
             class="modal__content-form-input">
           <div class="error-message" data-error-for="name"></div>
 
-          <label for="surname" class="modal__content-form-label">Surname</label>
+          <label for="surname" class="modal__content-form-label"
+            data-i18n="modal.labels.surname"></label>
           <input type="text" placeholder="Surname" id="surname" required
+            data-i18n-placeholder="modal.placeholders.surname"
             data-validate="required"
             class="modal__content-form-input">
           <div class="error-message" data-error-for="surname"></div>
 
-          <label for="email" class="modal__content-form-label">Email</label>
+          <label for="email" class="modal__content-form-label"
+            data-i18n="modal.labels.email">Email</label>
           <input type="email" placeholder="example@gmail.com" id="email"
             required data-validate="email"
             class="modal__content-form-input">
           <div class="error-message" data-error-for="email"></div>
 
-          <label for="phone" class="modal__content-form-label">Phone</label>
+          <label for="phone" class="modal__content-form-label"
+            data-i18n="modal.labels.phone"></label>
           <input type="tel" placeholder="+7 (999) 999-99-99" required
             data-validate="required"
             id="phone"
             class="modal__content-form-input">
           <div class="error-message" data-error-for="phone"></div>
           <button type="submit" class="modal__content-form-button"
-            id="modalBtn">Submit the
-            form and start earning</button>
-          <p class="modal__content-form-privacy">By clicking «Submit the form
-            and start earning», you agree to
-            <a href="#" class="modal__content-form-privacy-link">Privacy
-              Policy</a></p>
+            id="modalBtn" data-i18n="modal.button">
+          </button>
+          <p class="modal__content-form-privacy"><span
+              data-i18n="modal.privacy.text">By
+              clicking «Submit the form
+              and start earning», you agree to</span>
+            <a href="#" class="modal__content-form-privacy-link"
+              data-i18n="modal.privacy.linkText"></a>
+          </p>
         </form>
       </div>
     </div>
+
     <header class="header">
       <div class="header__container">
         <nav class="header__navigation">
@@ -74,46 +83,57 @@
           </div>
           <ul class="header__list">
             <li class="header__list-item"><a href="#profit"
-                class="header__list-item-link">Profit
-                Examples</a></li>
+                class="header__list-item-link"
+                data-i18n="header.profitExamples"></a></li>
             <li class="header__list-item"><a href="#ourTraders"
-                class="header__list-item-link">Our
-                Traders</a></li>
+                class="header__list-item-link"
+                data-i18n="header.ourTraders"></a></li>
             <li class="header__list-item"><a
                 href="#calculator"
-                class="header__list-item-link">Calculator</a></li>
+                class="header__list-item-link"
+                data-i18n="header.calculator"></a></li>
             <li class="header__list-item"><a
                 href="#testimonials"
-                class="header__list-item-link">Testimonials</a></li>
+                class="header__list-item-link"
+                data-i18n="header.testimonials"></a></li>
             <li class="header__list-item"><a href="#faq"
                 class="header__list-item-link">FAQ</a></li>
           </ul>
+          <div class="header__select">
+            <button class="header__select-button"
+              id="languageSelector"><span
+                id="languageSelectorText"></span> <img src="./assets/arrow.svg"
+                alt></button>
+            <div class="header__options-container" id="languageOptions"></div>
+          </div>
         </nav>
       </div>
     </header>
+
     <div class="welcome">
       <div class="container">
         <div class="welcome__content">
           <div class="welcome__content-block">
             <div class="welcome__content-block-bybit">
-              <p>Backed by</p>
+              <p data-i18n="welcome.backedBy"></p>
               <img src="./assets/bybit.svg" alt>
             </div>
             <h1 class="welcome__content-block-title"><span
-                class="gradient-letters">Passive
-                Income</span> with Bybit’s Top Traders — <br>Let your <img
+                class="gradient-letters"
+                data-i18n="welcome.title.highlight"></span><span
+                data-i18n="welcome.title.main"></span>
+              <span data-i18n="welcome.title.sub1"></span>
+              <img
                 src="./assets/coins.svg"
-                alt class="welcome__content-block-title-coins"> money work for
-              You!</h1>
-            <p class="welcome__content-block-text">Our team of professional
-              programmers and seasoned traders has developed cutting-edge
-              software that <span
-                class="welcome__content-block-text-orange">scans and analyzes
-                every trader on the Bybit
-                platform.</span> <span
-                class="welcome__content-block-text-hidden">With us, you can
-                invest efficiently in proven
-                professionals and earn passively.</span></p>
+                alt class="welcome__content-block-title-coins">
+              <span data-i18n="welcome.title.sub2"></span>
+            </h1>
+            <p class="welcome__content-block-text">
+              <span data-i18n="welcome.content.part1"></span><span
+                class="welcome__content-block-text-orange"
+                data-i18n="welcome.content.highlight"></span> <span
+                class="welcome__content-block-text-hidden"
+                data-i18n="welcome.content.part2"></span></p>
           </div>
           <div class="welcome__content-animation">
             <div
@@ -124,35 +144,45 @@
                 <img src="./assets/graph/arrow.svg" alt="arrow"
                   class="welcome__content-animation-profit-circle-arrow">
               </div>
-              <p class="welcome__content-animation-profit-title">Profit</p>
+              <p class="welcome__content-animation-profit-title"
+                data-i18n="welcome.animation.profit">Profit</p>
               <p class="welcome__content-animation-profit-text"
                 id="graphProfit">$1,000</p>
             </div>
-            <img src="./assets/graph/buy.svg" alt
-              class="welcome__content-animation-buy">
-            <img src="./assets/graph/sell.svg" alt
-              class="welcome__content-animation-sell">
+            <div class="welcome__content-animation-buy"
+              data-i18n="welcome.animation.buy">BUY</div>
+            <div class="welcome__content-animation-sell"
+              data-i18n="welcome.animation.sell">SELL</div>
             <div class="welcome__content-animation-firstTrader">
               <img src="./assets/graph/cursorRight.svg" alt
                 class="welcome__content-animation-firstTrader-cursor">
-              <img src="./assets/graph/firstTrader.jpg" alt="firstTrader"
-                class="welcome__content-animation-firstTrader-img">
-              <p
-                class="welcome__content-animation-firstTrader-name">Professional
-                trader</p>
+              <div class="welcome__content-animation-firstTrader-trader">
+                <img src="./assets/graph/firstTrader.jpg" alt="firstTrader"
+                  class="welcome__content-animation-firstTrader-img">
+                <p
+                  class="welcome__content-animation-firstTrader-name"
+                  data-i18n="welcome.animation.trader">Professional
+                  trader</p>
+              </div>
             </div>
 
             <div class="welcome__content-animation-secondTrader">
               <img src="./assets/graph/cursorLeft.svg" alt
                 class="welcome__content-animation-secondTrader-cursor">
-              <img src="./assets/graph/secondTrader.jpg" alt="secondTrader"
-                class="welcome__content-animation-secondTrader-img">
-              <p
-                class="welcome__content-animation-secondTrader-name">Professional
-                trader</p>
+              <div class="welcome__content-animation-secondTrader-trader">
+                <img src="./assets/graph/secondTrader.jpg" alt="secondTrader"
+                  class="welcome__content-animation-secondTrader-img">
+                <p
+                  class="welcome__content-animation-secondTrader-name"
+                  data-i18n="welcome.animation.trader">Professional
+                  trader</p>
+              </div>
             </div>
           </div>
-          <p class="welcome__content-block-text-visible">With us, you can invest
+          <p class="welcome__content-block-text-visible"
+            data-i18n="welcome.content.part2">With us,
+            you can
+            invest
             <br>
             efficiently in proven professionals and earn passively.</p>
         </div>
@@ -161,34 +191,34 @@
     <div class="container">
       <div class="why">
 
-        <h2 class="why__title">Why Choose BybitWealth</h2>
+        <h2 class="why__title" data-i18n="why.title"></h2>
         <div class="why__cards">
           <div class="why__cards-algorithms">
             <div class="why__cards-algorithm">
               <div class>
-                <p class="why__cards-algorithm-title">Unique Selection
-                  Algorithm</p>
-                <p class="why__cards-algorithm-text">We analyze thousands of
-                  Bybit
-                  traders, selecting the top 1% based on:</p>
+                <p class="why__cards-algorithm-title"
+                  data-i18n="why.algorithm.title"></p>
+                <p class="why__cards-algorithm-text"
+                  data-i18n="why.algorithm.description"></p>
                 <ul class="why__cards-algorithm-list">
                   <li class="why__cards-algorithm-list-item">
-                    <p class="why__cards-algorithm-list-item-title">Stable
-                      Profit
-                      (monthly ROI)</p>
-                    <p class="why__cards-algorithm-list-item-text">10% min
+                    <p class="why__cards-algorithm-list-item-title"
+                      data-i18n="why.algorithm.criteria.title1"></p>
+                    <p class="why__cards-algorithm-list-item-text"
+                      data-i18n="why.algorithm.criteria.value1">
                     </p>
                   </li>
                   <li class="why__cards-algorithm-list-item">
-                    <p class="why__cards-algorithm-list-item-title">Low
-                      Drawdowns</p>
-                    <p class="why__cards-algorithm-list-item-text">5-8%
-                      max</p>
+                    <p class="why__cards-algorithm-list-item-title"
+                      data-i18n="why.algorithm.criteria.title2"></p>
+                    <p class="why__cards-algorithm-list-item-text"
+                      data-i18n="why.algorithm.criteria.value2"></p>
                   </li><li class="why__cards-algorithm-list-item">
                     <p
-                      class="why__cards-algorithm-list-item-title">Experience</p>
-                    <p class="why__cards-algorithm-list-item-text">2+
-                      years</p>
+                      class="why__cards-algorithm-list-item-title"
+                      data-i18n="why.algorithm.criteria.title3"></p>
+                    <p class="why__cards-algorithm-list-item-text"
+                      data-i18n="why.algorithm.criteria.value3"></p>
                   </li>
                 </ul>
               </div>
@@ -197,30 +227,26 @@
             </div>
             <div class="why__cards-line">
               <div class="why__cards-line-risk">
-                <p class="why__cards-line-risk-title">Risk Diversification</p>
-                <p class="why__cards-line-risk-text">Your funds are spread
-                  across
-                  10–15 elite traders — no reliance on a single strategy.</p>
+                <p class="why__cards-line-risk-title"
+                  data-i18n="why.risk.title"></p>
+                <p class="why__cards-line-risk-text"
+                  data-i18n="why.risk.text"></p>
                 <img src="./assets/cards/risk.png" alt="risk"
                   class="why__cards-line-risk-img">
               </div>
               <div class="why__cards-line-effort">
-                <p class="why__cards-line-effort-title">Zero Effort
-                  Required</p>
-                <p class="why__cards-line-effort-text">No charts, no analysis,
-                  no
-                  stress.
-                  Invest — we handle the rest.</p>
+                <p class="why__cards-line-effort-title"
+                  data-i18n="why.effort.title"></p>
+                <p class="why__cards-line-effort-text"
+                  data-i18n="why.effort.text"></p>
                 <img src="./assets/cards/effort.png" alt="effort"
                   class="why__cards-line-effort-img">
               </div>
             </div>
           </div>
           <div class="why__cards-start">
-            <p class="why__cards-start-title">Begin small and scale your
-              earnings
-              —<br>
-              Start from</p>
+            <p class="why__cards-start-title"
+              data-i18n-html="why.start.title"></p>
             <img src="./assets/cards/start.svg" alt="start"
               class="why__cards-start-img">
           </div>
@@ -228,67 +254,74 @@
 
       </div>
       <div class="profit" id="profit">
-        <h2 class="profit__title">Profit<br>Examples</h2>
-        <p class="profit__subtitle">6 Months</p>
+        <h2 class="profit__title"
+          data-i18n-html="profit.title"></h2>
+        <p class="profit__subtitle" data-i18n="profit.subtitle"></p>
         <div class="profit__cards">
           <div class="profit__cards-card">
-            <p class="profit__cards-card-title">Conservative Portfolio</p>
+            <p class="profit__cards-card-title"
+              data-i18n="profit.cards.card1.title"></p>
             <img src="./assets/profit/conservative.svg" alt="conservative"
               class="profit__cards-card-img">
-            <p class="profit__cards-card-procent">+12-18 % </p>
-            <p class="profit__cards-card-text">monthly (low risk)</p>
+            <p class="profit__cards-card-procent"
+              data-i18n="profit.cards.card1.percent"></p>
+            <p class="profit__cards-card-text"
+              data-i18n="profit.cards.card1.text"></p>
           </div>
           <div class="profit__cards-card">
-            <p class="profit__cards-card-title">Balanced Portfolio</p>
+            <p class="profit__cards-card-title"
+              data-i18n="profit.cards.card2.title"></p>
             <img src="./assets/profit/balanced.svg" alt="balanced"
               class="profit__cards-card-img">
-            <p class="profit__cards-card-procent">+20-25 % </p>
-            <p class="profit__cards-card-text">monthly</p>
+            <p class="profit__cards-card-procent"
+              data-i18n="profit.cards.card2.percent"></p>
+            <p class="profit__cards-card-text"
+              data-i18n="profit.cards.card2.text"></p>
           </div>
           <div class="profit__cards-card">
-            <p class="profit__cards-card-title">Premium Traders</p>
+            <p class="profit__cards-card-title"
+              data-i18n="profit.cards.card3.title"></p>
             <img src="./assets/profit/premium.svg" alt="premium"
               class="profit__cards-card-img">
-            <p class="profit__cards-card-procent">Up to +100 %</p>
-            <p class="profit__cards-card-text">monthly (high risk)</p>
+            <p class="profit__cards-card-procent"
+              data-i18n="profit.cards.card3.percent"></p>
+            <p class="profit__cards-card-text"
+              data-i18n="profit.cards.card3.text"></p>
           </div>
         </div>
       </div>
 
       <div class="security">
-        <h2 class="security__title">Security<br>
-          Guarantees</h2>
+        <h2 class="security__title" data-i18n-html="security.title"></h2>
         <img src="./assets/security/vector.svg" alt="vector"
           class="security__vector">
         <div class="security__cards">
           <div class="security__cards-card">
             <div class="security__cards-card-content">
               <img src="./assets/security/wallet.svg" alt="portfolio">
-              <p class="security__cards-card-text">Funds stored in
-                multi-signature
-                wallets</p>
+              <p class="security__cards-card-text"
+                data-i18n="security.cards.text1"></p>
             </div>
           </div>
           <div class="security__cards-card">
             <div class="security__cards-card-content">
               <img src="./assets/security/report.svg" alt="portfolio">
-              <p class="security__cards-card-text">Weekly transparency
-                reports:
-                Track where your money is invested</p>
+              <p class="security__cards-card-text"
+                data-i18n="security.cards.text2"></p>
             </div>
           </div>
           <div class="security__cards-card">
             <div class="security__cards-card-content">
               <img src="./assets/security/portfolio.svg" alt="portfolio">
-              <p class="security__cards-card-text">5% insurance fund for
-                emergencies</p>
+              <p class="security__cards-card-text"
+                data-i18n="security.cards.text3"></p>
             </div>
           </div>
           <div class="security__cards-card">
             <div class="security__cards-card-content">
               <img src="./assets/security/withdraw.svg" alt="portfolio">
-              <p class="security__cards-card-text">Instant withdrawals to your
-                wallet at any time</p>
+              <p class="security__cards-card-text"
+                data-i18n="security.cards.text4"></p>
             </div>
           </div>
         </div>
@@ -296,27 +329,32 @@
       </div>
 
       <div class="trader" id="ourTraders">
-        <h2 class="trader__title">Meet Our Traders</h2>
-        <p class="trader__subtitle">Our top 3 traders delivered 500%+ annual
-          returns to clients in 2023</p>
+        <h2 class="trader__title" data-i18n="traders.title"></h2>
+        <p class="trader__subtitle" data-i18n="traders.subtitle"></p>
         <div class="trader__cards">
           <div class="trader__cards-card">
-            <p class="trader__cards-card-title">Conservative trader</p>
-            <p class="trader__cards-card-text">40.31% ROI in 90 days</p>
+            <p class="trader__cards-card-title"
+              data-i18n="traders.cards.card1.type"></p>
+            <p class="trader__cards-card-text"
+              data-i18n="traders.cards.card1.roi"></p>
             <img src="./assets/trader/conservative.png"
               alt="conservative trader"
               class="trader__cards-card-img">
           </div>
           <div class="trader__cards-card">
-            <p class="trader__cards-card-title">Conservative trader</p>
-            <p class="trader__cards-card-text">51.50% ROI in 90 days</p>
+            <p class="trader__cards-card-title"
+              data-i18n="traders.cards.card2.type"></p>
+            <p class="trader__cards-card-text"
+              data-i18n="traders.cards.card2.roi"></p>
             <img src="./assets/trader/conservative51.png"
               alt="conservative trader"
               class="trader__cards-card-img">
           </div>
           <div class="trader__cards-card">
-            <p class="trader__cards-card-title">Aggressive trader</p>
-            <p class="trader__cards-card-text">334.77% ROI in 90 days</p>
+            <p class="trader__cards-card-title"
+              data-i18n="traders.cards.card3.type"></p>
+            <p class="trader__cards-card-text"
+              data-i18n="traders.cards.card3.roi"></p>
             <img src="./assets/trader/aggressive.png" alt="aggressive trader"
               class="trader__cards-card-img">
           </div>
@@ -325,13 +363,12 @@
 
       <div class="startNow">
         <div class="startNow__content">
-          <h2 class="startNow__title"><span class="gradient-letters">Start
-              Now</span> — Your
-            Profitable Month Begins
-            Tomorrow!</h2>
-          <p class="startNow__text">Click «Start» — watch your capital
-            grow</p>
-          <button class="startNow__button" onclick="showModal()">Start Earning
+          <h2 class="startNow__title"><span class="gradient-letters"
+              data-i18n="startNow.title.highlight"></span><span
+              data-i18n="startNow.title.rest"></span></h2>
+          <p class="startNow__text" data-i18n="startNow.text"></p>
+          <button class="startNow__button" onclick="showModal()"><span
+              data-i18n="startNow.button"></span>
             <img
               src="./assets/startNow/arrow.svg" alt="arrow"></button>
         </div>
@@ -345,32 +382,39 @@
 
       <div class="calculator" id="calculator">
         <div class="calculator__content">
-          <h1 class="calculator__content-title">Calculator for Compound
-            Interest
-            on Investments</h1>
-          <p class="calculator__content-text">Input your initial capital,
-            investment period, and rate</p>
+          <h1 class="calculator__content-title"
+            data-i18n="calculator.title"></h1>
+          <p class="calculator__content-text"
+            data-i18n="calculator.subtitle"></p>
         </div>
         <div class="calculator__calc">
           <div class="calculator__calc-calculation">
             <div class="calculator__calc-capital">
-              <p class="calculator__calc-capital-title">Initial capital</p>
+              <p class="calculator__calc-capital-title"
+                data-i18n="calculator.labels.capital"></p>
               <div class="calculator__calc-capital-value"
                 id="initialCapital">0</div>
               <input type="range" min="0" max="9" value="0"
                 class="calculator__calc-range" id="initialCapitalRange">
             </div>
             <div class="calculator__calc-period">
-              <p class="calculator__calc-period-title">Investment period:
+              <p class="calculator__calc-period-title"><span
+                  data-i18n="calculator.labels.period"></span>
                 <span
-                  id="investmentPeriod"><b>8 years</b></span></p>
+                  id="investmentPeriod"
+                  class="calculator__calc-period-bold"></span><span
+                  data-i18n="calculator.year"
+                  class="calculator__calc-period-bold"></span></p>
               <input type="range" min="0" max="9" value="0"
                 class="calculator__calc-range" id="investmentPeriodRange">
             </div>
             <div class="calculator__calc-rate">
               <div class="calculator__calc-rate-stroke">
-                <p class="calculator__calc-rate-title">Interest rate: <span
-                    id="interestRate"><b>10%</b></span>
+                <p class="calculator__calc-rate-title"> <span
+                    data-i18n="calculator.labels.rate">
+                  </span><span
+                    id="interestRate"
+                    class="calculator__calc-rate-bold"><b>100%</b></span>
                 </p>
                 <svg width="20"
                   height="20" viewBox="0 0 20 20" fill="none"
@@ -387,7 +431,9 @@
                     fill="#5D5D5D" />
                 </svg>
                 <div class="calculator__calc-rate-info-text">
-                  Calculated as trader’s monthly ROI × 12 months
+                  <span data-i18n="calculator.tooltip">
+
+                  </span>
                 </div>
               </div>
               <input type="range" min="2" max="22" step="1" value="2"
@@ -395,7 +441,9 @@
             </div>
             <div class>
               <label for="reinvest"
-                class="calculator__calc-checkbox-label">Reinvest Earnings
+                class="calculator__calc-checkbox-label"> <span
+                  data-i18n="calculator.labels.reinvest">Reinvest
+                  Earnings</span>
                 <input type="checkbox" id="reinvest"
                   class="calculator__calc-checkbox">
                 <span class="calculator__calc-checkbox-custom"></span>
@@ -404,31 +452,35 @@
           </div>
           <div class="calculator__calc-result">
             <div class="calculator__calc-result-value">
-              <p class="calculator__calc-result-value-title">Your profit</p>
+              <p class="calculator__calc-result-value-title"
+                data-i18n="calculator.results.profit"></p>
               <p class="calculator__calc-result-value-profit" id="yourProfit">
                 + 1 345 $ </p>
 
               <div class="calculator__calc-result-value-stroke"></div>
-              <p class="calculator__calc-result-value-title">Total</p>
+              <p class="calculator__calc-result-value-title"
+                data-i18n="calculator.results.total"></p>
               <p class="calculator__calc-result-value-total" id="total"> + 1
                 655
                 $</p>
             </div>
             <div class="calculator__calc-result-annual">
-              <p class="calculator__calc-result-annual-ourTraders">Our
-                traders’
-                annual returns:</p>
+              <p class="calculator__calc-result-annual-ourTraders"
+                data-i18n="calculator.results.returns"></p>
               <div class="calculator__calc-result-annual-line">
                 <div class="calculator__calc-result-annual-line-block">
                   <p
-                    class="calculator__calc-result-annual-title">Conservative</p>
-                  <p class="calculator__calc-result-annual-text">100%+</p>
+                    class="calculator__calc-result-annual-title"
+                    data-i18n="calculator.results.types.conservative"></p>
+                  <p class="calculator__calc-result-annual-text"
+                    data-i18n="calculator.results.conservativeValue">100%+</p>
                 </div>
                 <div class="calculator__calc-result-annual-line-block">
-                  <p class="calculator__calc-result-annual-title">Higher
-                    Risk</p>
-                  <p class="calculator__calc-result-annual-text">Up to
-                    1,100%</p>
+                  <p class="calculator__calc-result-annual-title"
+                    data-i18n="calculator.results.types.highRisk"></p>
+                  <p class="calculator__calc-result-annual-text"> <span
+                      data-i18n="calculator.results.upTo"></span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -444,13 +496,13 @@
           class="stillHesitating__img">
         <div class="stillHesitating__content">
           <p class="stillHesitating__content-title"><span
-              class="gradient-letters">Still hesitating?</span></p>
-          <p class="stillHesitating__content-text">Bitcoin surged 600%
-            in the
-            last 2 years.<br> Start earning 20%+ monthly
-            today!</p>
+              class="gradient-letters"
+              data-i18n="hesitation.title"></span></p>
+          <p class="stillHesitating__content-text"
+            data-i18n-html="hesitation.content"></p>
           <button class="stillHesitating__content-button"
-            onclick="showModal()">Start Earning
+            onclick="showModal()"> <span
+              data-i18n="hesitation.button"></span>
             <img
               src="./assets/startNow/arrow.svg" alt="arrow"></button>
         </div>
@@ -458,7 +510,8 @@
 
       <div class="slider" id="testimonials">
         <div class="slider__header">
-          <h2 class="slider__header-title">Client Testimonials</h2>
+          <h2 class="slider__header-title"
+            data-i18n="testimonials.title"></h2>
           <div class="slider__header-control">
             <div class="slider__header-control-left"
               id="slider-left"><img
@@ -479,26 +532,23 @@
                 <p
                   class="slider__content-card-header-name">@bartekwitam</p>
               </div>
-              <p class="slider__content-card-text">I used to lose money
-                trading
-                manually. Tried BybitWealth — best decision! My deposit
-                grew
-                67%
-                in 6 months. No hidden fees, totally transparent.</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card1.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+67
-                    %</p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card1.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">8
-                    months</p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card1.period"></p>
                 </div>
               </div>
             </div>
@@ -510,28 +560,23 @@
                 <p
                   class="slider__content-card-header-name">@scaligero_</p>
               </div>
-              <p class="slider__content-card-text">I’m a skeptic, but
-                their
-                trader
-                stats convinced me. Invested 5k→10.6k in a year. Support
-                replies
-                in 10 mins. Perfect for risk-averse investors.</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card2.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+112
-                    %
-                  </p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card2.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">1
-                    year
-                  </p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card2.period"></p>
                 </div>
               </div>
             </div>
@@ -542,28 +587,23 @@
                 <p
                   class="slider__content-card-header-name">@miinko_k</p>
               </div>
-              <p class="slider__content-card-text">I feared a scam but
-                verified
-                via ChainSecurity (open audit). Transparent. +23% in 3
-                months
-                beats my bank.</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card3.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+23
-                    %
-                  </p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card3.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">3
-                    months
-
-                  </p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card3.period"></p>
                 </div>
               </div>
             </div>
@@ -575,29 +615,23 @@
                 <p
                   class="slider__content-card-header-name">@michal.ba</p>
               </div>
-              <p class="slider__content-card-text">After losing 2k in
-                crypto,
-                I
-                nearly quit. My friend recommended BybitWealth. Invested
-                1k →
-                $2.45k. Now I sleep soundly.</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card4.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+45
-                    %
-                  </p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card4.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">5
-                    months
-
-                  </p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card4.period"></p>
                 </div>
               </div>
             </div>
@@ -609,28 +643,23 @@
                 <p
                   class="slider__content-card-header-name">@norbert_bb</p>
               </div>
-              <p class="slider__content-card-text">I’m in IT — no time
-                for
-                trading. BybitWealth saved me. Auto-allocation gave
-                +89%.
-                Withdrawals take hours.</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card5.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+89
-                    %
-                  </p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card5.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">6
-                    months
-
-                  </p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card5.period"></p>
                 </div>
               </div>
             </div>
@@ -641,30 +670,23 @@
                 <p
                   class="slider__content-card-header-name">@dsimon.1</p>
               </div>
-              <p class="slider__content-card-text">I wanted
-                diversification.
-                My
-                $10k is split across 7 traders here. +38% in 2 months —
-                just
-                the
-                start!</p>
+              <p class="slider__content-card-text"
+                data-i18n="testimonials.cards.card6.text"></p>
               <div class="slider__content-card-line">
                 <div class="slider__content-card-line-returns">
                   <p
-                    class="slider__content-card-line-returns-title">Returns</p>
+                    class="slider__content-card-line-returns-title"
+                    data-i18n="testimonials.cards.returns"></p>
                   <p
-                    class="slider__content-card-line-returns-percent">+38
-                    %
-                  </p>
+                    class="slider__content-card-line-returns-percent"
+                    data-i18n="testimonials.cards.card6.returnsPercent"></p>
                 </div>
                 <div class="slider__content-card-line-invest">
                   <p
-                    class="slider__content-card-line-invest-title">Invest
-                    Period</p>
-                  <p class="slider__content-card-line-invest-period">2
-                    months
-
-                  </p>
+                    class="slider__content-card-line-invest-title"
+                    data-i18n="testimonials.cards.investPeriod"></p>
+                  <p class="slider__content-card-line-invest-period"
+                    data-i18n="testimonials.cards.card6.period"></p>
                 </div>
               </div>
             </div>
@@ -673,14 +695,15 @@
       </div>
 
       <div class="analystPredicts">
-        <p class="analystPredicts__title">Analyst Predicts<br>
-          <span class="gradient-letters">$8 Trillion Crypto</span>
-          Market
-          Cap by 2026</p>
-        <p class="analystPredicts__text">Start earning 20 %+ monthly
-          today!</p>
-        <button class="analystPredicts__button" onclick="showModal()">Start
-          Earning <img
+        <p class="analystPredicts__title"><span
+            data-i18n="analystPredicts.title.base"></span><br>
+          <span class="gradient-letters"
+            data-i18n="analystPredicts.title.highlight"></span><span
+            data-i18n="analystPredicts.title.rest">
+          </span></p>
+        <p class="analystPredicts__text" data-i18n="analystPredicts.text"></p>
+        <button class="analystPredicts__button" onclick="showModal()"><span
+            data-i18n="analystPredicts.button"></span><img
             src="./assets/startNow/arrow.svg"
             alt="arrow"></button>
       </div>
@@ -692,7 +715,7 @@
         <div class="faq__accordions">
           <div class="faq__accordion">
             <div class="faq__accordion-header">
-              <p>How We Pick the Best?</p>
+              <p data-i18n="faq.accordions.question1.title"></p>
               <div class="faq__accordion-header-arrow"> <svg width="16"
                   height="16" viewBox="0 0 16 16" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -703,23 +726,18 @@
             </div>
             <div class="faq__accordion-content">
               <ol class="faq__accordion-content-list">
-                <li>— <b>Brutal Filtering:</b> Reject 99% of traders with
-                  volatile
-                  histories.</li>
-                <li>— <b>24/7 Monitoring:</b> Instantly reallocate funds
-                  if a
-                  strategy
-                  underperforms.</li>
-                <li>— <b>Full Transparency:</b> Review every trader’s
-                  stats in
-                  your
-                  portfolio.</li>
+                <li
+                  data-i18n-html="faq.accordions.question1.answers.answer1"></li>
+                <li
+                  data-i18n-html="faq.accordions.question1.answers.answer2"></li>
+                <li
+                  data-i18n-html="faq.accordions.question1.answers.answer3"></li>
               </ol>
             </div>
           </div>
           <div class="faq__accordion">
             <div class="faq__accordion-header">
-              <p>Why Trust Us?</p>
+              <p data-i18n-html="faq.accordions.question2.title"></p>
               <div class="faq__accordion-header-arrow">
                 <svg width="16"
                   height="16" viewBox="0 0 16 16" fill="none"
@@ -731,14 +749,19 @@
               </div>
             </div>
             <div class="faq__accordion-content">
-              — <b>7+ years</b> in algorithmic trading.<br>
-              — <b>1,500+ investors</b> earning passively.<br>
-              — <b>24/7 support</b> and weekly email reports.<br>
+              <ol class="faq__accordion-content-list">
+                <li
+                  data-i18n-html="faq.accordions.question2.answers.answer1"></li>
+                <li
+                  data-i18n-html="faq.accordions.question2.answers.answer2"></li>
+                <li
+                  data-i18n-html="faq.accordions.question2.answers.answer3"></li>
+              </ol>
             </div>
           </div>
           <div class="faq__accordion">
             <div class="faq__accordion-header">
-              <p>Why Us Over Bybit?
+              <p data-i18n-html="faq.accordions.question3.title">
               </p>
               <div class="faq__accordion-header-arrow"> <svg width="16"
                   height="16" viewBox="0 0 16 16" fill="none"
@@ -749,22 +772,7 @@
                 </svg></div>
             </div>
             <div class="faq__accordion-content">
-              «Bybit gives market access — we
-              deliver <b>ready-made success:</b> <br>
-              — <b>Save Time:</b> No endless chart analysis. We’ve found the
-              consistent
-              winners. <br>
-              — <b>Diversify Easily:</b> Invest in 3–5 traders via one
-              account.
-              Bybit
-              requires multiple accounts and manual work. <br>
-              — <b>No Emotional Trading:</b> Even pros make mistakes. Our
-              algorithm
-              copies only verified trades. <br>
-              — <b>+30% Higher Returns:</b> Our top 5% traders outperform
-              Bybit’s
-              averages. <br>
-              <b>Your money works — you relax.</b>»
+              <p data-i18n-html="faq.accordions.question3.answer"></p>
             </div>
           </div>
         </div>
@@ -774,15 +782,12 @@
       <div class="startNowSecond">
         <div class="startNowSecond__content">
           <p class="startNowSecond__title"><span
-              class="gradient-letters">Start
-              Now</span> — Your
-            Profitable<br>Month Begins
-            Tomorrow!</p>
-          <p class="startNowSecond__text">Click «Start» — watch your
-            capital
-            grow</p>
-          <button class="startNowSecond__button" onclick="showModal()">Start
-            Earning
+              class="gradient-letters"
+              data-i18n="startNowSecond.title.highlight"></span><span
+              data-i18n-html="startNowSecond.title.rest"></span></p>
+          <p class="startNowSecond__text" data-i18n="startNowSecond.text"></p>
+          <button class="startNowSecond__button" onclick="showModal()"><span
+              data-i18n="startNowSecond.button"></span>
             <img
               src="./assets/startNow/arrow.svg" alt="arrow"></button>
         </div>
@@ -795,16 +800,34 @@
             class="startNowSecond__images-coin">
         </div>
         <div class="startNowSecond__line"><p
-            class="startNowSecond__line-text"><b>Important:</b> Trading
-            carries
-            risks. Past
-            performance does not guarantee future results.</p></div>
+            class="startNowSecond__line-text"
+            data-i18n-html="startNowSecond.disclaimer"></p></div>
       </div>
 
     </div>
     <footer class="footer">
-      <p class="footer__text">© 2019-2025 «BybitWealth». All rights
-        reserved</p>
+      <div class="footer__container">
+        <p class="footer__address">Legal address: 51, Griva Digeni,
+          ATHINEON COURT Office: 202,
+          Paphos 8047, Cyprus</p>
+        <p class="footer__text">© 2019-2025 «BybitWealth». All rights
+          reserved</p>
+        <div class="footer__links">
+          <div class="footer__links-link">
+            <img src="./assets/footer/tg.svg" alt
+              class="footer__links-link-img">
+            <p class="footer__links-link-text"><a
+                href="https://t.me/bybitwealth"
+                target="_blank"
+                class="footer__links-link-href">@bybitwealth</a></p>
+          </div>
+          <div class="footer__links-link">
+            <img src="./assets/footer/mail.svg" alt
+              class="footer__links-link-img">
+            <p class="footer__links-link-text">info@bybitwealth.com</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

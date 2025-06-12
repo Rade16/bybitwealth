@@ -38,32 +38,46 @@
     }
   }
   &-buy {
-    opacity: 0;
+    transform: translate(-50%, -50%);
+    background: #58585e;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #ffffff;
     position: absolute;
-    bottom: 135px;
-    left: 215px;
+    bottom: 125px;
+    left: 235px;
     animation: buy 5s ease infinite;
   }
   &-sell {
+    transform: translate(-50%, -50%);
+    left: 325px;
+    top: 65px;
+    background: #58585e;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #ffffff;
     position: absolute;
-    right: 185px;
-    top: 55px;
     animation: sell 5s ease infinite;
   }
   &-firstTrader {
     position: absolute;
-    padding: 2px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 100px;
-    bottom: 0px;
-    left: 40px;
     animation: trader1 5s ease infinite;
-
+    &-trader {
+      position: absolute;
+      padding: 2px;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 100px;
+      gap: 8px;
+      right: 10px;
+    }
     &-img {
       border-radius: 100px;
     }
@@ -72,25 +86,28 @@
       font-size: 16px;
       font-weight: 400;
       padding-right: 14px;
+      white-space: nowrap;
     }
     &-cursor {
-      position: absolute;
       top: -20px;
       right: -10px;
     }
   }
   &-secondTrader {
     position: absolute;
-    padding: 2px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 100px;
     animation: trader2 5s ease infinite;
-
+    &-trader {
+      left: 10px;
+      position: absolute;
+      padding: 2px;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 100px;
+      gap: 8px;
+    }
     &-img {
       border-radius: 100px;
     }
@@ -99,9 +116,9 @@
       font-size: 16px;
       font-weight: 400;
       padding-right: 14px;
+      white-space: nowrap;
     }
     &-cursor {
-      position: absolute;
       top: -20px;
       left: -10px;
     }
@@ -110,25 +127,24 @@
 
 @keyframes trader1 {
   0% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px; //1
   }
-
   10% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px; //1
   }
   20% {
-    bottom: 70px;
-    left: 25px;
+    bottom: 105px;
+    left: 220px; //2
   }
   90% {
-    bottom: 70px;
-    left: 25px;
+    bottom: 105px;
+    left: 220px; //2
   }
   100% {
-    bottom: 180px;
-    left: -30px;
+    bottom: 210px;
+    left: 160px; //1
   }
 }
 
@@ -156,25 +172,25 @@
 
 @keyframes trader2 {
   0% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
 
   30% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
   40% {
-    right: -5px;
-    bottom: 280px;
+    right: 190px;
+    bottom: 315px;
   }
   90% {
-    right: -5px;
-    bottom: 280px;
+    right: 190px;
+    bottom: 315px;
   }
   100% {
-    right: -95px;
-    bottom: 195px;
+    right: 105px;
+    bottom: 230px;
   }
 }
 
