@@ -153,7 +153,7 @@
         "highRisk": "Higher Risk"
       },
       "conservativeValue":"100%+",
-      "upTo": "Up to 1,100%"
+      "upTo": "Up to 650%"
     },
     "tooltip": "Calculated as trader’s monthly ROI × 12 months",
     "months":" months"

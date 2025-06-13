@@ -151,7 +151,7 @@
         "highRisk": "Yüksek Risk"
       },
       "conservativeValue":"%100+",
-      "upTo": "%1.100'e kadar"
+      "upTo": "%650'e kadar"
     },
     "tooltip": "aylık ROI × 12 ay",
     "months": " ay"
