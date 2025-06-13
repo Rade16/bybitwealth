@@ -1,8 +1,10 @@
 // Инициализация констант и шагов
 const initialCapitalSteps = [
-  150, 300, 500, 1000, 1500, 2000, 3000, 5000, 10000, 15000,
+  150, 300, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000,
 ];
-const interestRateSteps = Array.from({ length: 21 }, (_, i) => (i + 2) * 50); // 100-1100 с шагом 50
+const interestRateSteps = [
+  150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650,
+]; // 100-1100 с шагом 50
 
 // Ползунки
 const initialCapitalRange = document.querySelector("#initialCapitalRange");
@@ -36,9 +38,9 @@ function updateInitialCapital(e) {
 
 // Обновление процентной ставки
 function updateInterestRate(e) {
-  const rate = interestRateSteps[e.target.value - 2];
+  const rate = interestRateSteps[e.target.value];
   document.querySelector("#interestRate").innerHTML = `<b>${rate}%</b>`;
-  updateRangeBackground(e.target, e.target.value - 2, 20);
+  updateRangeBackground(e.target, e.target.value, e.target.max);
   calculateProfit();
 }
 
@@ -64,17 +66,19 @@ function updateInvestmentPeriod(e) {
 
 function calculateProfit() {
   const initialCapital = initialCapitalSteps[initialCapitalRange.value];
-  const years = parseInt(investmentPeriodRange.value) + 1;
-  const annualRate = interestRateSteps[interestRateRange.value - 2] / 100;
+  const months = parseInt(investmentPeriodRange.value) + 1;
+  const annualRate = interestRateSteps[interestRateRange.value] / 100;
   const isReinvest = reinvestCheckbox.checked;
 
   let total, profit;
 
   if (isReinvest) {
-    const n = 12;
-    total = initialCapital * Math.pow(1 + annualRate / n, n * years);
+    if (isReinvest) {
+      const monthlyRate = annualRate / 12;
+      total = initialCapital * Math.pow(1 + monthlyRate, months);
+    }
   } else {
-    total = initialCapital * (1 + annualRate * years);
+    total = initialCapital * (1 + ((annualRate * 1) / 12) * months);
   }
 
   profit = total - initialCapital;

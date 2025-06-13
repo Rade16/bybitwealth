@@ -154,7 +154,7 @@
       "upTo": "%1.100'e kadar"
     },
     "tooltip": "aylık ROI × 12 ay",
-    "year": " yıl"
+    "months": " ay"
   },
   "hesitation": {
       "title": "Hâlâ tereddüt mü ediyorsunuz?",

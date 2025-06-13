@@ -156,7 +156,7 @@
       "upTo": "Up to 1,100%"
     },
     "tooltip": "Calculated as trader’s monthly ROI × 12 months",
-    "year":" years"
+    "months":" months"
   },
   "hesitation": {
       "title": "Still hesitating?",
